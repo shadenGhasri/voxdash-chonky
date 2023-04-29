@@ -92,7 +92,7 @@ export const ToolbarSearch: React.FC<ToolbarSearchProps> = React.memo(() => {
                             icon={showLoadingIndicator ? ChonkyIconName.loading : ChonkyIconName.search}
                             spin={showLoadingIndicator}
                         />
-                        <p>paratech test</p>
+                   
                     </InputAdornment>
                 
                 ),
@@ -107,7 +107,7 @@ const useStyles = makeGlobalChonkyStyles(theme => ({
     searchFieldContainer: {
         height: theme.toolbar.size,
         width: 150,
-        backgroundColor : "red"
+
     },
     searchIcon: {
         fontSize: '0.9em',
