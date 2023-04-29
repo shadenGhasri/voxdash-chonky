@@ -35,7 +35,7 @@ export const ExtraActions = {
     UploadFiles: defineFileAction({
         id: 'upload_files',
         button: {
-            name: 'Upload files',
+            name: 'Bulk Project Upload',
             toolbar: true,
             tooltip: 'Upload files',
             icon: ChonkyIconName.upload,
