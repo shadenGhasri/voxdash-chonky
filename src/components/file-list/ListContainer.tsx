@@ -49,17 +49,7 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
         };
 
         return (
-            // <FixedSizeList
-            //     ref={listRef as any}
-            //     className={classes.listContainer}
-            //     itemSize={viewConfig.entryHeight}
-            //     height={height}
-            //     itemCount={displayFileIds.length}
-            //     width={width}
-            //     itemKey={getItemKey}
-            // >
-            //     {rowRenderer}
-            // </FixedSizeList>
+        <></>
         );
     }, [
         classes.listContainer,
