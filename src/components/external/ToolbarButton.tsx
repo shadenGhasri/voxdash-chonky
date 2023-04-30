@@ -67,14 +67,14 @@ export const ToolbarButton: React.FC<ToolbarButtonProps> = React.memo(props => {
             title={tooltip ? tooltip : text}
             disabled={disabled || !onClick}
         >
-            {iconComponent}
+            {/* {iconComponent} */}
             {text && !iconOnly && <span>{text}</span>}
             {dropdown && (
                 <div className={classes.iconDropdown}>
-                    {/* <ChonkyIcon
+                    <ChonkyIcon
                         icon={icon ? icon : ChonkyIconName.dropdown}
                         fixedWidth={true}
-                    /> */}
+                    />
                 </div>
             )}
         </Button>
