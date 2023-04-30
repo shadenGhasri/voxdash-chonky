@@ -51,7 +51,7 @@ export const ToolbarButton: React.FC<ToolbarButtonProps> = React.memo(props => {
                     icon={icon ? icon : ChonkyIconName.fallbackIcon}
                     fixedWidth={true}
                 /> */}
-                <img src='../../icon/add.svg'/>
+                <img src='../icon/add.svg'/>
             </div>
         ) : null;
 
