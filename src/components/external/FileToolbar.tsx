@@ -40,7 +40,7 @@ export const FileToolbar: React.FC<FileToolbarProps> = React.memo(() => {
             <div className={classes.toolbarContainer}>
                 <div className={classes.toolbarLeft}>
                     <ToolbarSearch />
-                    {/* <ToolbarInfo /> */}
+                    <ToolbarInfo />
                 </div>
                 <div className={classes.toolbarRight}>{toolbarItemComponents}</div>
             </div>
