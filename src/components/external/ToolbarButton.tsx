@@ -7,7 +7,7 @@
 import Button from '@material-ui/core/Button';
 import React, { useContext } from 'react';
 import { Nullable } from 'tsdef';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { selectFileActionData } from '../../redux/selectors';
 import { useParamSelector } from '../../redux/store';
 import { ChonkyIconName } from '../../types/icons.types';
@@ -47,12 +47,15 @@ export const ToolbarButton: React.FC<ToolbarButtonProps> = React.memo(props => {
     const iconComponent =
         icon || iconOnly ? (
             <div className={iconOnly ? '' : classes.iconWithText}>
-                <ChonkyIcon
+                {/* <ChonkyIcon
                     icon={icon ? icon : ChonkyIconName.fallbackIcon}
                     fixedWidth={true}
-                />
+                /> */}
+                <img src='../../icon/add.svg'/>
             </div>
         ) : null;
+
+
 
     const className = c({
         [externalClassName ?? '']: true,
@@ -60,6 +63,8 @@ export const ToolbarButton: React.FC<ToolbarButtonProps> = React.memo(props => {
         [classes.iconOnlyButton]: iconOnly,
         [classes.activeButton]: !!active,
     });
+
+
     return (
         <Button
             className={className}
@@ -67,7 +72,7 @@ export const ToolbarButton: React.FC<ToolbarButtonProps> = React.memo(props => {
             title={tooltip ? tooltip : text}
             disabled={disabled || !onClick}
         >
-            {/* {iconComponent} */}
+            {iconComponent}
             {text && !iconOnly && <span>{text}</span>}
             {dropdown && (
                 <div className={classes.iconDropdown}>

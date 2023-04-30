@@ -26,8 +26,7 @@ export const ExtraActions = {
             name: 'New project',
             toolbar: true,
             tooltip: 'Create a folder',
-            icon: "../../icon/add.svg",
-            
+            icon: ChonkyIconName.folderCreate,
         },
     } as const),
     /**
