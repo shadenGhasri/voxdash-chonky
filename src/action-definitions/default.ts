@@ -118,16 +118,16 @@ export const DefaultActions = {
     /**
      * Action that enables Grid view.
      */
-    EnableGridView: defineFileAction({
-        id: 'enable_grid_view',
-        fileViewConfig: { mode: FileViewMode.Grid, entryWidth: 165, entryHeight: 130 },
-        button: {
-            name: 'Switch to Grid view',
-            toolbar: true,
-            icon: ChonkyIconName.smallThumbnail,
-            iconOnly: true,
-        },
-    } as const),
+    // EnableGridView: defineFileAction({
+    //     id: 'enable_grid_view',
+    //     fileViewConfig: { mode: FileViewMode.Grid, entryWidth: 165, entryHeight: 130 },
+    //     button: {
+    //         name: 'Switch to Grid view',
+    //         toolbar: true,
+    //         icon: ChonkyIconName.smallThumbnail,
+    //         iconOnly: true,
+    //     },
+    // } as const),
     /**
      * Action that sorts files by `file.name`.
      */
