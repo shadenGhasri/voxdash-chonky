@@ -23,10 +23,10 @@ export const ExtraActions = {
     CreateFolder: defineFileAction({
         id: 'create_folder',
         button: {
-            name: 'Create folder',
+            name: 'New project',
             toolbar: true,
             tooltip: 'Create a folder',
-            icon: ChonkyIconName.folderCreate,
+            icon: "/icon/add.svg",
         },
     } as const),
     /**
