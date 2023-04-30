@@ -137,7 +137,7 @@ export const DefaultActions = {
         button: {
             name: 'Sort by name',
             toolbar: true,
-            group: 'Options',
+            group: 'Sort by:',
         },
     } as const),
     /**
@@ -149,7 +149,7 @@ export const DefaultActions = {
         button: {
             name: 'Sort by size',
             toolbar: true,
-            group: 'Options',
+            group: 'Sort by:',
         },
     } as const),
     /**
@@ -161,7 +161,7 @@ export const DefaultActions = {
         button: {
             name: 'Sort by date',
             toolbar: true,
-            group: 'Options',
+            group: 'Sort by:',
         },
     } as const),
     /**
@@ -177,7 +177,7 @@ export const DefaultActions = {
         button: {
             name: 'Show hidden files',
             toolbar: true,
-            group: 'Options',
+            group: 'Sort by:',
         },
     } as const),
     /**
@@ -193,7 +193,7 @@ export const DefaultActions = {
         button: {
             name: 'Show folders first',
             toolbar: true,
-            group: 'Options',
+            group: 'Sort by:',
         },
     } as const),
     /**

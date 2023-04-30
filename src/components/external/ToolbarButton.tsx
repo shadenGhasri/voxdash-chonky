@@ -47,11 +47,10 @@ export const ToolbarButton: React.FC<ToolbarButtonProps> = React.memo(props => {
     const iconComponent =
         icon || iconOnly ? (
             <div className={iconOnly ? '' : classes.iconWithText}>
-                {/* <ChonkyIcon
+                <ChonkyIcon
                     icon={icon ? icon : ChonkyIconName.fallbackIcon}
                     fixedWidth={true}
-                /> */}
-                <img src='../icon/add.svg'/>
+                />
             </div>
         ) : null;
 
@@ -64,7 +63,7 @@ export const ToolbarButton: React.FC<ToolbarButtonProps> = React.memo(props => {
         [classes.activeButton]: !!active,
     });
 
-
+    
     return (
         <Button
             className={className}
@@ -72,8 +71,8 @@ export const ToolbarButton: React.FC<ToolbarButtonProps> = React.memo(props => {
             title={tooltip ? tooltip : text}
             disabled={disabled || !onClick}
         >
-            {iconComponent}
-            {text && !iconOnly && <span>{text}</span>}
+            {/* {iconComponent} */}
+            {text && !iconOnly && <span style={{color : "#1A5DBC"}}>{text}</span>}
             {dropdown && (
                 <div className={classes.iconDropdown}>
                     <ChonkyIcon
