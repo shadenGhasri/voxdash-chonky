@@ -39,17 +39,27 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
         const rowRenderer = (data: { index: number; style: CSSProperties }) => {
             return (
                 <div style={data.style}>
-                    <SmartFileEntry
+                    {/* <SmartFileEntry
                         fileId={displayFileIds[data.index] ?? null}
                         displayIndex={data.index}
                         fileViewMode={FileViewMode.List}
-                    />
+                    /> */}
                 </div>
             );
         };
 
         return (
-        <></>
+            <FixedSizeList
+                ref={listRef as any}
+                className={classes.listContainer}
+                itemSize={viewConfig.entryHeight}
+                height={height}
+                itemCount={displayFileIds.length}
+                width={width}
+                itemKey={getItemKey}
+            >
+                {rowRenderer}
+            </FixedSizeList>
         );
     }, [
         classes.listContainer,
