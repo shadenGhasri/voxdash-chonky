@@ -18,7 +18,6 @@ export interface ToolbarInfoProps {}
 
 export const ToolbarInfo: React.FC<ToolbarInfoProps> = React.memo(() => {
     const classes = useStyles();
-
     const displayFileIds = useSelector(selectors.getDisplayFileIds);
     const selectionSize = useSelector(selectSelectionSize);
     const hiddenCount = useSelector(selectHiddenFileCount);
