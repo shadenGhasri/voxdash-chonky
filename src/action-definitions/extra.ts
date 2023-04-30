@@ -26,7 +26,8 @@ export const ExtraActions = {
             name: 'New project',
             toolbar: true,
             tooltip: 'Create a folder',
-            icon: "https://www.paratechco.com/img/logoParaTech.svg",
+            icon: "../../icon/add.svg",
+            
         },
     } as const),
     /**
