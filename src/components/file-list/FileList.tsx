@@ -2,7 +2,6 @@
 import React, { UIEvent, useCallback, useContext, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import AutoSizer from 'react-virtualized-auto-sizer';
-
 import { ChonkyActions } from '../../action-definitions/index';
 import { selectCurrentFolder, selectFileViewConfig, selectors } from '../../redux/selectors';
 import { FileViewMode } from '../../types/file-view.types';
@@ -15,6 +14,8 @@ import {
 import { FileListEmpty } from './FileListEmpty';
 import { GridContainer } from './GridContainer';
 import { ListContainer } from './ListContainer';
+
+
 
 export interface FileListProps {
     onScroll?: (e: UIEvent<HTMLDivElement>) => void;
@@ -63,6 +64,7 @@ export const FileList: React.FC<FileListProps> = React.memo((props: FileListProp
                     <ChonkyIcon icon={dndCanDrop ? ChonkyIconName.dndCanDrop : ChonkyIconName.dndCannotDrop} />
                 </div>
             </div>
+            <p>shaden</p>
             <AutoSizer disableHeight={!fillParentContainer}>{listRenderer}</AutoSizer>
         </div>
     );
