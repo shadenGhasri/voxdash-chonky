@@ -64,7 +64,6 @@ export const FileList: React.FC<FileListProps> = React.memo((props: FileListProp
                     <ChonkyIcon icon={dndCanDrop ? ChonkyIconName.dndCanDrop : ChonkyIconName.dndCannotDrop} />
                 </div>
             </div>
-            <p>shaden</p>
             <AutoSizer disableHeight={!fillParentContainer}>{listRenderer}</AutoSizer>
         </div>
     );
