@@ -14,7 +14,7 @@ export const CompactEntry: React.FC<FileEntryProps> = React.memo(
     ({ file, selected, focused, dndState }) => {
         const entryState: FileEntryState = useFileEntryState(file, selected, focused);
 
-        const { fileModDateString, fileSizeString } = useLocalizedFileEntryStrings(
+        const { fileModDateString, fileSizeString , shaden } = useLocalizedFileEntryStrings(
             file
         );
 
@@ -48,6 +48,13 @@ export const CompactEntry: React.FC<FileEntryProps> = React.memo(
                         <div className={classes.listFileEntryProperty}>
                             {file ? (
                                 fileSizeString ?? <span>—</span>
+                            ) : (
+                                <TextPlaceholder minLength={10} maxLength={20} />
+                            )}
+                        </div>
+                        <div className={classes.listFileEntryProperty}>
+                            {file ? (
+                                shaden ?? <span>shaden</span>
                             ) : (
                                 <TextPlaceholder minLength={10} maxLength={20} />
                             )}

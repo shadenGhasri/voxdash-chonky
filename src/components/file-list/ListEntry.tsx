@@ -23,7 +23,7 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
         const entryState: FileEntryState = useFileEntryState(file, selected, focused);
         const dndIconName = useDndIcon(dndState);
 
-        const { fileModDateString, fileSizeString } = useLocalizedFileEntryStrings(
+        const { fileModDateString, fileSizeString , shaden } = useLocalizedFileEntryStrings(
             file
         );
         const styleState = useMemo<StyleState>(
@@ -73,6 +73,13 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
                         <TextPlaceholder minLength={10} maxLength={20} />
                     )}
                 </div>
+                <div className={classes.listFileEntryProperty}>
+                            {file ? (
+                                shaden ?? <span>shaden</span>
+                            ) : (
+                                <TextPlaceholder minLength={10} maxLength={20} />
+                            )}
+                        </div>
             </div>
         );
     }

@@ -73,6 +73,7 @@ export const useLocalizedFileEntryStrings = (file: Nullable<FileData>) => {
         return {
             fileModDateString: formatters.formatFileModDate(intl, file),
             fileSizeString: formatters.formatFileSize(intl, file),
+            shaden: formatters.formatFileSize(intl, file),
         };
     }, [file, formatters, intl]);
 };
