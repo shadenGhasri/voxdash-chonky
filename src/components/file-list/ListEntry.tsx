@@ -23,9 +23,13 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
         const entryState: FileEntryState = useFileEntryState(file, selected, focused);
         const dndIconName = useDndIcon(dndState);
 
-        const { fileModDateString, fileSizeString , shaden } = useLocalizedFileEntryStrings(
-            file
-        );
+        const {
+            Status,
+            UsageReport,
+            DataModified,
+            complition,
+            Access,
+        } = useLocalizedFileEntryStrings(file);
         const styleState = useMemo<StyleState>(
             () => ({
                 entryState,
@@ -59,27 +63,43 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
                 >
                     <FileEntryName file={file} />
                 </div>
-                <div className={classes.listFileEntryProperty}>
-                    {file ? (
-                        fileModDateString ?? <span>—</span>
-                    ) : (
-                        <TextPlaceholder minLength={5} maxLength={15} />
-                    )}
+                <div className={classes.listFileEntryProperties}>
+                    <div className={classes.listFileEntryProperty}>
+                        {file ? (
+                            Status ?? <span>—</span>
+                        ) : (
+                            <TextPlaceholder minLength={5} maxLength={15} />
+                        )}
+                    </div>
+                    <div className={classes.listFileEntryProperty}>
+                        {file ? (
+                            UsageReport ?? <span>—</span>
+                        ) : (
+                            <TextPlaceholder minLength={10} maxLength={20} />
+                        )}
+                    </div>
+                    <div className={classes.listFileEntryProperty}>
+                        {file ? (
+                            DataModified ?? <span>-</span>
+                        ) : (
+                            <TextPlaceholder minLength={10} maxLength={20} />
+                        )}
+                    </div>
+                    <div className={classes.listFileEntryProperty}>
+                        {file ? (
+                            complition ?? <span>-</span>
+                        ) : (
+                            <TextPlaceholder minLength={10} maxLength={20} />
+                        )}
+                    </div>
+                    <div className={classes.listFileEntryProperty}>
+                        {file ? (
+                            Access ?? <span>-</span>
+                        ) : (
+                            <TextPlaceholder minLength={10} maxLength={20} />
+                        )}
+                    </div>
                 </div>
-                <div className={classes.listFileEntryProperty}>
-                    {file ? (
-                        fileSizeString ?? <span>—</span>
-                    ) : (
-                        <TextPlaceholder minLength={10} maxLength={20} />
-                    )}
-                </div>
-                <div className={classes.listFileEntryProperty}>
-                            {file ? (
-                                shaden ?? <span>shaden</span>
-                            ) : (
-                                <TextPlaceholder minLength={10} maxLength={20} />
-                            )}
-                        </div>
             </div>
         );
     }

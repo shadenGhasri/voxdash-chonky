@@ -3,7 +3,6 @@ import filesize from 'filesize';
 import { createContext, useContext, useMemo } from 'react';
 import { IntlShape, useIntl } from 'react-intl';
 import { Nullable, Undefinable } from 'tsdef';
-
 import { FileAction } from '../types/action.types';
 import { FileData } from '../types/file.types';
 import { ChonkyFormatters } from '../types/i18n.types';
@@ -71,9 +70,13 @@ export const useLocalizedFileEntryStrings = (file: Nullable<FileData>) => {
     const formatters = useContext(ChonkyFormattersContext);
     return useMemo(() => {
         return {
-            fileModDateString: formatters.formatFileModDate(intl, file),
-            fileSizeString: formatters.formatFileSize(intl, file),
-            shaden: formatters.formatFileSize(intl, file),
+            // fileModDateString: formatters.formatFileModDate(intl, file),
+            // fileSizeString: formatters.formatFileSize(intl, file),
+            Status: formatters.formatFile(intl, file),
+            UsageReport: formatters.formatFile(intl, file),
+            DataModified: formatters.formatFile(intl, file),
+            complition: formatters.formatFile(intl, file),
+            Access: formatters.formatFile(intl, file),
         };
     }, [file, formatters, intl]);
 };

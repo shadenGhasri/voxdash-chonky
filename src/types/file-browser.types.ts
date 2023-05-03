@@ -47,6 +47,7 @@ export type ChonkyActionUnion = typeof ChonkyActions[keyof typeof ChonkyActions]
  * Props for the `FileBrowser` component that is exposed to library users.
  */
 export interface FileBrowserProps {
+   
     /**
      * An ID used to identify this particular Chonky instance. Useful when there are
      * multiple Chonky instances on the same page, and they need to interact with

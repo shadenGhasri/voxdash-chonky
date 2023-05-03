@@ -5,6 +5,8 @@ import { useLocalizedFileEntryStrings } from '../../util/i18n';
 import { ChonkyIconContext } from '../../util/icon-helper';
 import { makeLocalChonkyStyles } from '../../util/styles';
 import { TextPlaceholder } from '../external/TextPlaceholder';
+import { TextValue } from '../external/TextValue';
+
 import { useFileEntryHtmlProps, useFileEntryState } from './FileEntry-hooks';
 import { FileEntryName } from './FileEntryName';
 import { FileEntryState } from './GridEntryPreview';
@@ -14,9 +16,13 @@ export const CompactEntry: React.FC<FileEntryProps> = React.memo(
     ({ file, selected, focused, dndState }) => {
         const entryState: FileEntryState = useFileEntryState(file, selected, focused);
 
-        const { fileModDateString, fileSizeString , shaden } = useLocalizedFileEntryStrings(
-            file
-        );
+        const {
+            Status,
+            UsageReport,
+            DataModified,
+            complition,
+            Access,
+        } = useLocalizedFileEntryStrings(file);
 
         const classes = useStyles(entryState);
         const ChonkyIcon = useContext(ChonkyIconContext);
@@ -40,21 +46,39 @@ export const CompactEntry: React.FC<FileEntryProps> = React.memo(
                     <div className={classes.listFileEntryProperties}>
                         <div className={classes.listFileEntryProperty}>
                             {file ? (
-                                fileModDateString ?? <span>—</span>
+                                Status ?? <span>—</span>
                             ) : (
-                                <TextPlaceholder minLength={5} maxLength={15} />
+                                <>
+                                  {/* <TextPlaceholder minLength={5} maxLength={15} /> */}
+                                  {/* <TextValue value={} /> */}
+                                </>
+                              
                             )}
                         </div>
                         <div className={classes.listFileEntryProperty}>
                             {file ? (
-                                fileSizeString ?? <span>—</span>
+                                UsageReport ?? <span>—</span>
                             ) : (
                                 <TextPlaceholder minLength={10} maxLength={20} />
                             )}
                         </div>
                         <div className={classes.listFileEntryProperty}>
                             {file ? (
-                                shaden ?? <span>shaden</span>
+                                DataModified ?? <span>-</span>
+                            ) : (
+                                <TextPlaceholder minLength={10} maxLength={20} />
+                            )}
+                        </div>
+                        <div className={classes.listFileEntryProperty}>
+                            {file ? (
+                                complition ?? <span>-</span>
+                            ) : (
+                                <TextPlaceholder minLength={10} maxLength={20} />
+                            )}
+                        </div>
+                        <div className={classes.listFileEntryProperty}>
+                            {file ? (
+                                Access ?? <span>-</span>
                             ) : (
                                 <TextPlaceholder minLength={10} maxLength={20} />
                             )}
