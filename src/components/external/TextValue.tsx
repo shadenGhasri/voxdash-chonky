@@ -9,15 +9,15 @@ import React from 'react';
 import { makeLocalChonkyStyles } from '../../util/styles';
 
 export interface TextValuerProps {
-    files: any;
+    // files: any;
 }
 
 // const getRandomInt = (min: number, max: number) => {
 //     return min + Math.floor(Math.random() * Math.floor(max - min));
 // };
 export const TextValue: React.FC<TextValuerProps> = React.memo(props => {
-    const { files} = props;
-    console.log("shaden",files)
+    // const { files} = props;
+    // console.log("shaden",files)
 
     // const placeholderLength = getRandomInt(minLength, maxLength);
     // const whitespace = '&nbsp;'.repeat(placeholderLength);
