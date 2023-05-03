@@ -10,6 +10,6 @@ export interface I18nConfig extends Partial<IntlConfig> {
 export interface ChonkyFormatters {
     formatFileModDate: (intl: IntlShape, file: Nullable<FileData>) => Nullable<string>;
     formatFileSize: (intl: IntlShape, file: Nullable<FileData>) => Nullable<string>;
-    formatFile: any;
+    formatFile: (intl: IntlShape, file: Nullable<FileData>) => Nullable<any>;
 
 }

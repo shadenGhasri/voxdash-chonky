@@ -72,11 +72,11 @@ export const useLocalizedFileEntryStrings = (file: Nullable<FileData>) => {
         return {
             // fileModDateString: formatters.formatFileModDate(intl, file),
             // fileSizeString: formatters.formatFileSize(intl, file),
-            Status,
-            UsageReport,
-            DataModified,
-            complition,
-            Access,
+            Status: formatters.formatFileSize(intl, file),
+            UsageReport: formatters.formatFileSize(intl, file),
+            DataModified: formatters.formatFileSize(intl, file),
+            complition: formatters.formatFileSize(intl, file),
+            Access: formatters.formatFileSize(intl, file),
         };
     }, [file, formatters, intl]);
 };
@@ -108,6 +108,9 @@ export const defaultFormatters: ChonkyFormatters = {
         }
         return `${sizeData.value} ${sizeData.symbol}`;
     },
+
+
+
 };
 
 export const ChonkyFormattersContext = createContext(defaultFormatters);
