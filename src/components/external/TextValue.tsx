@@ -23,7 +23,7 @@ export const TextValue: React.FC<TextValuerProps> = React.memo(props => {
 
     const classes = useStyles();
     return (
-       <div>{files.files.files.files[0].name}</div>
+       <div>{files}</div>
     );
 });
 
