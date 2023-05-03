@@ -63,7 +63,7 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
                 >
                     <FileEntryName file={file} />
                 </div>
-                {/* <div className={classes.listFileEntryProperties}>
+                {/* <div className={classes.listFileEntryProperties}> */}
                     <div className={classes.listFileEntryProperty}>
                         {file ? (
                             Status ?? <span>—</span>
@@ -99,7 +99,7 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
                             <TextPlaceholder minLength={10} maxLength={20} />
                         )}
                     </div>
-                </div> */}
+                {/* </div> */}
             </div>
         );
     }
