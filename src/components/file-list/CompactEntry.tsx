@@ -49,7 +49,7 @@ export const CompactEntry: React.FC<FileEntryProps> = React.memo(
                                 Status ?? <span>—</span>
                             ) : (
                                 <>
-                                  {/* <TextPlaceholder minLength={5} maxLength={15} /> */}
+                                  <TextPlaceholder minLength={5} maxLength={15} />
                                   {/* <TextValue value={} /> */}
                                 </>
                               
