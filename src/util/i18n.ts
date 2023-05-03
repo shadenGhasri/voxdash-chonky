@@ -72,11 +72,11 @@ export const useLocalizedFileEntryStrings = (file: Nullable<FileData>) => {
         return {
             // fileModDateString: formatters.formatFileModDate(intl, file),
             // fileSizeString: formatters.formatFileSize(intl, file),
-            Status: formatters.formatFile(intl, file),
-            UsageReport: formatters.formatFile(intl, file),
-            DataModified: formatters.formatFile(intl, file),
-            complition: formatters.formatFile(intl, file),
-            Access: formatters.formatFile(intl, file),
+            Status,
+            UsageReport,
+            DataModified,
+            complition,
+            Access,
         };
     }, [file, formatters, intl]);
 };
