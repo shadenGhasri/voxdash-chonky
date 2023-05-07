@@ -71,6 +71,7 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
                             <TextPlaceholder minLength={5} maxLength={15} />
                         )}
                     </div>
+                    <div className={classes.listFileEntryPropertyyyy}>DataModified</div>
                     <div className={classes.listFileEntryProperty}>
                         {file ? (
                             UsageReport ?? <span>—</span>
@@ -78,6 +79,7 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
                             <TextPlaceholder minLength={10} maxLength={20} />
                         )}
                     </div>
+                    <div className={classes.listFileEntryPropertyyyy}>DataModified</div>
                     <div className={classes.listFileEntryPropertyyyy}>
                         {file ? (
                             DataModified ?? <span>-</span>
@@ -85,6 +87,7 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
                             <TextPlaceholder minLength={10} maxLength={20} />
                         )}
                     </div>
+                    <div className={classes.listFileEntryPropertyyyy}>DataModified</div>
                     <div className={classes.listFileEntryProperty}>
                         {file ? (
                             complition ?? <span>-</span>
@@ -92,6 +95,7 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
                             <TextPlaceholder minLength={10} maxLength={20} />
                         )}
                     </div>
+                    <div className={classes.listFileEntryPropertyyyy}>DataModified</div>
                     <div className={classes.listFileEntryPropertyyyy}>
                         {file ? (
                             Access ?? <span>-</span>

@@ -44,8 +44,6 @@ export const CompactEntry: React.FC<FileEntryProps> = React.memo(
                         <FileEntryName file={file} />
                     </div>
                     <div className={classes.listFileEntryProperties}>
-                       <div className=''>
-                       <div className=''>Status</div>
                         <div className={classes.listFileEntryProperty}>
                             {file ? (
                                 Status ?? <span>—</span>
@@ -57,8 +55,6 @@ export const CompactEntry: React.FC<FileEntryProps> = React.memo(
                               
                             )}
                         </div>
-                       </div>
-                        <div className=''>UsageReport</div>
                         <div className={classes.listFileEntryProperty}>
                             {file ? (
                                 UsageReport ?? <span>—</span>
@@ -66,7 +62,6 @@ export const CompactEntry: React.FC<FileEntryProps> = React.memo(
                                 <TextPlaceholder minLength={10} maxLength={20} />
                             )}
                         </div>
-                        <div className=''>DataModified</div>
                         <div className={classes.listFileEntryProperty}>
                             {file ? (
                                 DataModified ?? <span>-</span>
@@ -74,7 +69,6 @@ export const CompactEntry: React.FC<FileEntryProps> = React.memo(
                                 <TextPlaceholder minLength={10} maxLength={20} />
                             )}
                         </div>
-                        <div className=''>complition</div>
                         <div className={classes.listFileEntryProperty}>
                             {file ? (
                                 complition ?? <span>-</span>
@@ -82,7 +76,6 @@ export const CompactEntry: React.FC<FileEntryProps> = React.memo(
                                 <TextPlaceholder minLength={10} maxLength={20} />
                             )}
                         </div>
-                        <div className=''>Access</div>
                         <div className={classes.listFileEntryProperty}>
                             {file ? (
                                 Access ?? <span>-</span>
