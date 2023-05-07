@@ -42,24 +42,24 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
         const ChonkyIcon = useContext(ChonkyIconContext);
         const fileEntryHtmlProps = useFileEntryHtmlProps(file);
         return (
-            <div className={classes.listFileEntry} {...fileEntryHtmlProps}>
-                <div className={commonClasses.focusIndicator}></div>
-                <div
-                    className={c([
-                        commonClasses.selectionIndicator,
-                        classes.listFileEntrySelection,
-                    ])}
-                ></div>
-                <div className={classes.listFileEntryIcon}>
-                    <ChonkyIcon
-                        icon={dndIconName ?? entryState.icon}
-                        spin={dndIconName ? false : entryState.iconSpin}
-                        fixedWidth={true}
-                    />
-                </div>
+            <>
+            <div>shamimmmmmmm</div>
+                <div className={classes.listFileEntry} {...fileEntryHtmlProps}>
+                    <div className={commonClasses.focusIndicator}></div>
+                    <div
+                        className={c([
+                            commonClasses.selectionIndicator,
+                            classes.listFileEntrySelection,
+                        ])}
+                    ></div>
+                    <div className={classes.listFileEntryIcon}>
+                        <ChonkyIcon
+                            icon={dndIconName ?? entryState.icon}
+                            spin={dndIconName ? false : entryState.iconSpin}
+                            fixedWidth={true}
+                        />
+                    </div>
 
-                <div className="bg-amber-200 w-[100vw] h-[100vh]">
-                    <div className='w-[100%] h-[20px] bg-zinc-500'></div>
                     <div
                         className={classes.listFileEntryName}
                         title={file ? file.name : undefined}
@@ -102,7 +102,7 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
                         )}
                     </div>
                 </div>
-            </div>
+            </>
         );
     }
 );
