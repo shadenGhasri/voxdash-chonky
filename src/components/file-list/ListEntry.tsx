@@ -57,21 +57,22 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
                         fixedWidth={true}
                     />
                 </div>
-                <div
-                    className={classes.listFileEntryName}
-                    title={file ? file.name : undefined}
-                >
-                    <FileEntryName file={file} />
-                </div>
-                {/* <div className={classes.listFileEntryProperties}> */}
-                    <div className={classes.listFileEntryPropertyyyy}>
+
+                <div className="bg-amber-200 w-[100vw] h-[100vh]">
+                    <div className='w-[100%] h-[20px] bg-zinc-500'></div>
+                    <div
+                        className={classes.listFileEntryName}
+                        title={file ? file.name : undefined}
+                    >
+                        <FileEntryName file={file} />
+                    </div>
+                    <div className={classes.listFileEntryProperty}>
                         {file ? (
-                            Status ?? <span>—----</span>
+                            Status ?? <span>—</span>
                         ) : (
                             <TextPlaceholder minLength={5} maxLength={15} />
                         )}
                     </div>
-                    <div className={classes.listFileEntryPropertyyyy}>DataModified</div>
                     <div className={classes.listFileEntryProperty}>
                         {file ? (
                             UsageReport ?? <span>—</span>
@@ -79,15 +80,13 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
                             <TextPlaceholder minLength={10} maxLength={20} />
                         )}
                     </div>
-                    <div className={classes.listFileEntryPropertyyyy}>DataModified</div>
-                    <div className={classes.listFileEntryPropertyyyy}>
+                    <div className={classes.listFileEntryProperty}>
                         {file ? (
                             DataModified ?? <span>-</span>
                         ) : (
                             <TextPlaceholder minLength={10} maxLength={20} />
                         )}
                     </div>
-                    <div className={classes.listFileEntryPropertyyyy}>DataModified</div>
                     <div className={classes.listFileEntryProperty}>
                         {file ? (
                             complition ?? <span>-</span>
@@ -95,15 +94,14 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
                             <TextPlaceholder minLength={10} maxLength={20} />
                         )}
                     </div>
-                    <div className={classes.listFileEntryPropertyyyy}>DataModified</div>
-                    <div className={classes.listFileEntryPropertyyyy}>
+                    <div className={classes.listFileEntryProperty}>
                         {file ? (
                             Access ?? <span>-</span>
                         ) : (
                             <TextPlaceholder minLength={10} maxLength={20} />
                         )}
                     </div>
-                {/* </div> */}
+                </div>
             </div>
         );
     }
@@ -166,6 +164,6 @@ const useStyles = makeLocalChonkyStyles(theme => ({
         flex: '0 1 150px',
         padding: [2, 8],
         zIndex: 20,
-        backgroundColor: 'blue',
+        backgroundColor: 'red',
     },
 }));
