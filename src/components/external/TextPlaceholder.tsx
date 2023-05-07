@@ -42,12 +42,11 @@ const useStyles = makeLocalChonkyStyles(() => ({
         animationIterationCount: 'infinite',
         animationTimingFunction: 'linear',
         animationDuration: '1.5s',
-        // backgroundColor: '#ccc',
+        backgroundColor: '#ccc',
         whiteSpace: 'nowrap',
         overflow: 'hidden',
         borderRadius: 4,
         maxWidth: '40%',
         minWidth: 20,
-        backgroundColor : "red"
     },
 }));

@@ -152,5 +152,6 @@ const useStyles = makeLocalChonkyStyles(theme => ({
         flex: '0 1 150px',
         padding: [2, 8],
         zIndex: 20,
+        backgroundColor: 'red',
     },
 }));
