@@ -17,7 +17,7 @@ export interface TextValuerProps {
 // };
 export const TextValue: React.FC<TextValuerProps> = React.memo(props => {
     // const { files} = props;
-    // console.log("shaden",files)
+  
 
     // const placeholderLength = getRandomInt(minLength, maxLength);
     // const whitespace = '&nbsp;'.repeat(placeholderLength);
