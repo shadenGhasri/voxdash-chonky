@@ -66,7 +66,7 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
                 {/* <div className={classes.listFileEntryProperties}> */}
                     <div className={classes.listFileEntryPropertyyyy}>
                         {file ? (
-                            Status ?? <span>—</span>
+                            Status ?? <span>—----</span>
                         ) : (
                             <TextPlaceholder minLength={5} maxLength={15} />
                         )}
