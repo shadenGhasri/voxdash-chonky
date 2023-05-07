@@ -61,7 +61,8 @@ export const FileList: React.FC<FileListProps> = React.memo((props: FileListProp
         <div onScroll={onScroll} ref={drop} className={c([classes.fileListWrapper, localClasses.fileListWrapper])} role="list">
             <div className={localClasses.dndDropZone}>
                 <div className={localClasses.dndDropZoneIcon}>
-                    <ChonkyIcon icon={dndCanDrop ? ChonkyIconName.dndCanDrop : ChonkyIconName.dndCannotDrop} />
+                    {/* <ChonkyIcon icon={dndCanDrop ? ChonkyIconName.dndCanDrop : ChonkyIconName.dndCannotDrop} /> */}
+                    <p>shaden</p>
                 </div>
             </div>
             <AutoSizer disableHeight={!fillParentContainer}>{listRenderer}</AutoSizer>
