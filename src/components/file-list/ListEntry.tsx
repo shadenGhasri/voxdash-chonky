@@ -64,7 +64,7 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
                     <FileEntryName file={file} />
                 </div>
                 {/* <div className={classes.listFileEntryProperties}> */}
-                    <div className={classes.listFileEntryProperty}>
+                    <div className={classes.listFileEntryPropertyyyy}>
                         {file ? (
                             Status ?? <span>—</span>
                         ) : (
@@ -78,7 +78,7 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
                             <TextPlaceholder minLength={10} maxLength={20} />
                         )}
                     </div>
-                    <div className={classes.listFileEntryProperty}>
+                    <div className={classes.listFileEntryPropertyyyy}>
                         {file ? (
                             DataModified ?? <span>-</span>
                         ) : (
@@ -92,7 +92,7 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
                             <TextPlaceholder minLength={10} maxLength={20} />
                         )}
                     </div>
-                    <div className={classes.listFileEntryProperty}>
+                    <div className={classes.listFileEntryPropertyyyy}>
                         {file ? (
                             Access ?? <span>-</span>
                         ) : (
@@ -153,5 +153,15 @@ const useStyles = makeLocalChonkyStyles(theme => ({
         padding: [2, 8],
         zIndex: 20,
         backgroundColor: 'red',
+    },
+    listFileEntryPropertyyyy: {
+        fontSize: theme.listFileEntry.propertyFontSize,
+        boxSizing: 'border-box',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        flex: '0 1 150px',
+        padding: [2, 8],
+        zIndex: 20,
+        backgroundColor: 'blue',
     },
 }));
