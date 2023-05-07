@@ -60,7 +60,7 @@ export const FileList: React.FC<FileListProps> = React.memo((props: FileListProp
                     <>
                         <div className="">
                             <div>shaden</div>
-                            <ListContainer width={"20%"} height={"15%"} />
+                            <ListContainer width={width} height={height} />
                         </div>
                     </>
                 );

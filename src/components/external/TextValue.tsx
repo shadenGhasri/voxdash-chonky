@@ -24,7 +24,7 @@ export const TextValue: React.FC<TextValuerProps> = React.memo(props => {
 
     const classes = useStyles();
     return (
-       <div>shaden</div>
+       <div></div>
     );
 });
 
