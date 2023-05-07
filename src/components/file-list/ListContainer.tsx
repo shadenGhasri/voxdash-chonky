@@ -15,8 +15,8 @@ import { makeLocalChonkyStyles } from '../../util/styles';
 import { SmartFileEntry } from './FileEntry';
 
 export interface FileListListProps {
-    width: number;
-    height: number;
+    width: any;
+    height: any;
 }
 
 export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
