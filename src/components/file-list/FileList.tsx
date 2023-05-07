@@ -59,7 +59,7 @@ export const FileList: React.FC<FileListProps> = React.memo((props: FileListProp
                 return (
                     <>
                         <div className="">
-                            <div className=''>shaden</div>
+                            <div className='w-[100%] bg-stone-400'>shaden</div>
                             <ListContainer width={width} height={height} />
                         </div>
                     </>
