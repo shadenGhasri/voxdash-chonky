@@ -115,8 +115,7 @@ const useStyles = makeLocalChonkyStyles(theme => ({
     },
     listFileEntryName: {
         padding: [0, 8, 4, 8],
-        with : "20%",
-        backgroundColor: 'black',
+       
     },
     listFileEntryProperties: {
         fontSize: theme.listFileEntry.propertyFontSize,
