@@ -68,9 +68,10 @@ export const ToolbarInfo: React.FC<ToolbarInfoProps> = React.memo(() => {
                         {selectedString && hiddenString && ', '}
                         <span className={classes.hiddenCountText}>{hiddenString}</span>
                     </span>
+                    
                 )}
 
-
+<span className="icon-add"></span>
                 {fileCountString}
             </Typography>
         </div>
