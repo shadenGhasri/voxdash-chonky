@@ -90,7 +90,7 @@ export const FileList: React.FC<FileListProps> = React.memo((props: FileListProp
                     />
                 </div>
             </div>
-             <div className={classes.titleDisplay}  >shaden</div>
+             {/* <div className={classes.titleDisplay}  >shaden</div> */}
             <AutoSizer disableHeight={!fillParentContainer}>{listRenderer}</AutoSizer>
         </div>
     );
