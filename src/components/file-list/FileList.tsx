@@ -58,11 +58,11 @@ export const FileList: React.FC<FileListProps> = React.memo((props: FileListProp
             } else if (viewConfig.mode === FileViewMode.List) {
                 return (
                     <>
-                        <div className="">
-                           <div className={classes.listContainerDisplay} >
-                           <div className={classes.listContainer} >shaden</div>
-                            <div  >shaden2</div>
-                           </div>
+                        <div >
+                            <div className={classes.listContainerDisplay}>
+                                <div className={classes.listContainer}>shaden</div>
+                                <div className={classes.listContainer}>shaden2</div>
+                            </div>
                             <ListContainer width={width} height={height} />
                         </div>
                     </>
@@ -151,16 +151,15 @@ const useStyles = makeGlobalChonkyStyles(() => ({
     },
     listContainer: {
         borderTop: `solid 1px black`,
-        height : "100px",
-        width :"10%",
-       
+        height: '100px',
+        width: '10%',
+        backgroundColor: 'blue',
     },
     listContainerDisplay: {
         borderTop: `solid 1px black`,
-        backgroundColor : "blue",
-        height : "100px",
-        width :"100%",
-        display : "flex"
-       
+        
+        height: '100px',
+        width: '100%',
+        display: 'flex',
     },
 }));
