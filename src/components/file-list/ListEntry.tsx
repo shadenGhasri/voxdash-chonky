@@ -45,6 +45,7 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
             <>
            
                 <div className={classes.listFileEntry} {...fileEntryHtmlProps}>
+                    <div style={{backgroundColor : "red" , width : "100%" , height : "50px"}}>shaden</div>
                     <div className={commonClasses.focusIndicator}></div>
                     <div
                         className={c([
@@ -68,7 +69,7 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
                     </div>
                     <div className={classes.listFileEntryProperty}>
                         {file ? (
-                            Status ?? <span>—-----------</span>
+                            Status ?? <span>—------</span>
                         ) : (
                             <TextPlaceholder minLength={5} maxLength={15} />
                         )}
