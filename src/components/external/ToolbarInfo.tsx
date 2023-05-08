@@ -61,14 +61,16 @@ export const ToolbarInfo: React.FC<ToolbarInfoProps> = React.memo(() => {
                 
                 {(selectedString || hiddenString) && (
                     <span className={classes.extraInfoSpan}>
-                        (
+                        
                         <span className={classes.selectionSizeText}>
                             {selectedString}
                         </span>
                         {selectedString && hiddenString && ', '}
-                        <span className={classes.hiddenCountText}>{hiddenString}</span>)
+                        <span className={classes.hiddenCountText}>{hiddenString}</span>
                     </span>
                 )}
+
+
                 {fileCountString}
             </Typography>
         </div>
@@ -92,7 +94,7 @@ const useStyles = makeGlobalChonkyStyles(theme => ({
         opacity: 0.8,
     },
     selectionSizeText: {
-        color: theme.colors.textActive,
+        color: "#1A5DBC",
     },
     hiddenCountText: {},
 }));
