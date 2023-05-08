@@ -74,7 +74,7 @@ export const useLocalizedFileEntryStrings = (file: Nullable<FileData>) => {
             // fileSizeString: formatters.formatFileSize(intl, file),
             Status: formatters.formatFileStatus(intl, file),
             UsageReport: formatters.formatFileSize(intl, file),
-            DataModified: formatters.formatFileSize(intl, file),
+            DataModified: formatters.formatFileModDate(intl, file),
             complition: formatters.formatFileSize(intl, file),
             Access: formatters.formatFileSize(intl, file),
         };
@@ -114,15 +114,17 @@ export const defaultFormatters: ChonkyFormatters = {
         const status = file.status;
         
         if (status === 1) {
-            return `yek`;
+            return "successful"
         } else if (status === 2) {
-            return `do`;
+            return `unsuccessful`;
         }else{
-            return `se`;
+            return `load`;
         }
         
         
     },
+
+
 
 
 
