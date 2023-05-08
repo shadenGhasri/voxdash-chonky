@@ -37,14 +37,14 @@
     "useTabs": false,
     "printWidth": 88
   },
-  "module": "dist/chonky.esm.js",
+  "module": "dist/chonkyvoxdash.esm.js",
   "size-limit": [
     {
-      "path": "dist/chonky.cjs.production.min.js",
+      "path": "dist/chonkyvoxdash.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/chonky.esm.js",
+      "path": "dist/chonkyvoxdash.esm.js",
       "limit": "10 KB"
     }
   ],
@@ -100,11 +100,11 @@
     "styled-components": "^5.3.0",
     "tsdef": "^0.0.14"
   },
-  "homepage": "https://chonky.io/",
+  "homepage": "https://chonkyvoxdash.io/",
   "author": "Timur Kuzhagaliyev <tim.kuzh@gmail.com> (https://foxypanda.me/)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TimboKZ/Chonky.git"
+    "url": "git+https://github.com/TimboKZ/chonkyvoxdash.git"
   },
   "bugs": {
     "url": "https://github.com/TimboKZ/Chonky/issues"
