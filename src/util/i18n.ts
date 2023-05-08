@@ -109,7 +109,7 @@ export const defaultFormatters: ChonkyFormatters = {
         return `${sizeData.value} ${sizeData.symbol}`;
     },
     formatFileStatus : (_intl: IntlShape, file: Nullable<FileData>): Nullable<string> => {
-        if (!file || typeof file.status !== 'number') return "number";
+        // if (!file || typeof file.status !== 'number') return "number";
 
         const status = file.status;
         
