@@ -43,7 +43,7 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
         const fileEntryHtmlProps = useFileEntryHtmlProps(file);
         return (
             <div className={classes.listFileDisplay} >
-           <div className={classes.titleDisplay}  >shaden</div>
+           {/* <div className={classes.titleDisplay}  >shaden</div> */}
                 <div className={classes.listFileEntry} {...fileEntryHtmlProps}>
                 
                     <div className={commonClasses.focusIndicator}></div>
