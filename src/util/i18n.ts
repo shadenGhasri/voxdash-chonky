@@ -109,18 +109,18 @@ export const defaultFormatters: ChonkyFormatters = {
         return `${sizeData.value} ${sizeData.symbol}`;
     },
     formatFileStatus : (_intl: IntlShape, file: Nullable<FileData>): Nullable<string> => {
-        // if (!file || typeof file.status !== 'number') return null;
+        if (!file || typeof file.status !== 'number') return "number";
 
-        // const status = file.status;
+        const status = file.status;
         
-        // if (status === 1) {
-        //     return `${Math.round(sizeData.value / 10) / 100.0} KB`;
-        // } else if (status === 2) {
-        //     return `${Math.round(sizeData.value)} ${sizeData.symbol}`;
-        // }else{
-        //     return `${sizeData.value} ${sizeData.symbol}`;
-        // }
-        return file.status;
+        if (status === 1) {
+            return `yek`;
+        } else if (status === 2) {
+            return `do`;
+        }else{
+            return `se`;
+        }
+        
         
     },
 
