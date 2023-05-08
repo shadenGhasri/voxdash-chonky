@@ -39,6 +39,7 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
         const rowRenderer = (data: { index: number; style: CSSProperties }) => {
             return (
                 <div style={data.style}>
+                    <div>shaden</div>
                     <SmartFileEntry
                         fileId={displayFileIds[data.index] ?? null}
                         displayIndex={data.index}
