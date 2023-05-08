@@ -71,7 +71,7 @@ export const ToolbarInfo: React.FC<ToolbarInfoProps> = React.memo(() => {
                     
                 )}
 
-<span className="icon icon-add"></span>
+<span className="icon icon-add iconStyle"></span>
                 {fileCountString}
             </Typography>
         </div>

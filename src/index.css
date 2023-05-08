@@ -46,3 +46,9 @@
     content: "\e904";
   }
   
+  .iconStyle{
+    background-color: blue;
+    font-size: large;
+    width: 20px;
+    height: 20px;
+  }
