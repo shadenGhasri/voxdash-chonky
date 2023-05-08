@@ -1,6 +1,6 @@
 {
   "name": "chonkyvoxdash",
-  "version": "2.4.19",
+  "version": "2.4.20",
   "description": "A File Browser component for React",
   "license": "MIT",
   "main": "dist/index.js",
