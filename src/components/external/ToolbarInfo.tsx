@@ -10,7 +10,11 @@ import { useSelector } from 'react-redux';
 
 import Typography from '@material-ui/core/Typography';
 
-import { selectHiddenFileCount, selectors, selectSelectionSize } from '../../redux/selectors';
+import {
+    selectHiddenFileCount,
+    selectors,
+    selectSelectionSize,
+} from '../../redux/selectors';
 import { getI18nId, I18nNamespace } from '../../util/i18n';
 import { important, makeGlobalChonkyStyles } from '../../util/styles';
 
@@ -58,22 +62,20 @@ export const ToolbarInfo: React.FC<ToolbarInfoProps> = React.memo(() => {
     return (
         <div className={classes.infoContainer}>
             <Typography className={classes.infoText} variant="body1">
-                
                 {(selectedString || hiddenString) && (
                     <span className={classes.extraInfoSpan}>
-                        
                         <span className={classes.selectionSizeText}>
                             {selectedString}
                         </span>
                         {selectedString && hiddenString && ', '}
                         <span className={classes.hiddenCountText}>{hiddenString}</span>
                     </span>
-                    
                 )}
 
-<span className="icon icon-add iconStyle"></span>
+                
                 {fileCountString}
             </Typography>
+            <span className="icon icon-add iconStyle"></span>
         </div>
     );
 });
@@ -95,7 +97,7 @@ const useStyles = makeGlobalChonkyStyles(theme => ({
         opacity: 0.8,
     },
     selectionSizeText: {
-        color: "#1A5DBC",
+        color: '#1A5DBC',
     },
     hiddenCountText: {},
 }));
