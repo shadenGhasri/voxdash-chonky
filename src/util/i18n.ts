@@ -72,7 +72,7 @@ export const useLocalizedFileEntryStrings = (file: Nullable<FileData>) => {
         return {
             // fileModDateString: formatters.formatFileModDate(intl, file),
             // fileSizeString: formatters.formatFileSize(intl, file),
-            Status: formatters.formatFileSize(intl, file),
+            Status: formatters.formatFileStatus(intl, file),
             UsageReport: formatters.formatFileSize(intl, file),
             DataModified: formatters.formatFileSize(intl, file),
             complition: formatters.formatFileSize(intl, file),
@@ -113,13 +113,14 @@ export const defaultFormatters: ChonkyFormatters = {
 
         const status = file.status;
         
-        if (status === 1) {
-            return `${Math.round(sizeData.value / 10) / 100.0} KB`;
-        } else if (status === 2) {
-            return `${Math.round(sizeData.value)} ${sizeData.symbol}`;
-        }else{
-            return `${sizeData.value} ${sizeData.symbol}`;
-        }
+        // if (status === 1) {
+        //     return `${Math.round(sizeData.value / 10) / 100.0} KB`;
+        // } else if (status === 2) {
+        //     return `${Math.round(sizeData.value)} ${sizeData.symbol}`;
+        // }else{
+        //     return `${sizeData.value} ${sizeData.symbol}`;
+        // }
+        return file.status;
         
     },
 
