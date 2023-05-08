@@ -58,23 +58,23 @@ export const SmartFileEntry: React.FC<SmartFileEntryProps> = React.memo(({ fileI
     else EntryComponent = GridEntry;
 
     return dndDisabled ? (
-   <>
-        <div className={classes.titleDisplay}  >shaden</div>
+   <div className={classes.titleDisplay}>
+        <div className={classes.titleRowDisplay}  >shaden</div>
         <ClickableWrapper {...clickableWrapperProps}>
                
             <EntryComponent {...fileEntryProps} dndState={disabledDndState} />
         </ClickableWrapper>
-   </>
+   </div>
     ) : (
         <DnDFileEntry file={file}>
             {dndState => (
-               <>
-               <div className={classes.titleDisplay}  >shaden</div>
+               <div className={classes.titleDisplay}>
+               <div className={classes.titleRowDisplay}  >shaden</div>
                 <ClickableWrapper {...clickableWrapperProps}>
                        
                     <EntryComponent {...fileEntryProps} dndState={dndState} />
                 </ClickableWrapper>
-               </>
+               </div>
             )}
         </DnDFileEntry>
     );
@@ -92,6 +92,13 @@ const useStyles = makeGlobalChonkyStyles(() => ({
     titleDisplay: {
         display: "flex",
         flexDirection: "column",
+        width : "100%",
+        height : "80vh"
+
+    },
+    titleRowDisplay: {
+        display: "flex",
+        flexDirection: "row",
         width : "100%"
 
     },
