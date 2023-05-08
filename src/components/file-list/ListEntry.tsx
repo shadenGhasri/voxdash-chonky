@@ -42,8 +42,8 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
         const ChonkyIcon = useContext(ChonkyIconContext);
         const fileEntryHtmlProps = useFileEntryHtmlProps(file);
         return (
-            <>
-           <div style={{backgroundColor : "red" , width : "100%" , height : "50px"}}>shaden</div>
+            <div className={classes.listFileDisplay} >
+           <div className={classes.titleDisplay}  >shaden</div>
                 <div className={classes.listFileEntry} {...fileEntryHtmlProps}>
                 
                     <div className={commonClasses.focusIndicator}></div>
@@ -103,7 +103,7 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
                         )}
                     </div>
                 </div>
-            </>
+            </div>
         );
     }
 );
@@ -157,14 +157,16 @@ const useStyles = makeLocalChonkyStyles(theme => ({
         zIndex: 20,
 
     },
-    listFileEntryPropertyyyy: {
-        fontSize: theme.listFileEntry.propertyFontSize,
-        boxSizing: 'border-box',
-        whiteSpace: 'nowrap',
-        overflow: 'hidden',
-        flex: '0 1 150px',
-        padding: [2, 8],
-        zIndex: 20,
+    listFileDisplay: {
+        display: "flex",
+        flexDirection: "column"
 
     },
+    titleDisplay: {
+        display: "flex",
+        flexDirection: "row",
+        width : "100%"
+
+    },
+    
 }));
