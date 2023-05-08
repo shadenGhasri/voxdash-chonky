@@ -45,7 +45,7 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
             <>
            
                 <div className={classes.listFileEntry} {...fileEntryHtmlProps}>
-                    <div style={{backgroundColor : "red" , width : "100%" , height : "50px"}}>shaden</div>
+                    <div style={{width : "100%" , height : "10px"}}>shaden</div>
                     <div className={commonClasses.focusIndicator}></div>
                     <div
                         className={c([
@@ -122,6 +122,7 @@ const useStyles = makeLocalChonkyStyles(theme => ({
         position: 'relative',
         display: 'flex',
         height: '100%',
+        flexDirection : "column"
     },
     listFileEntrySelection: {
         opacity: 0.6,
