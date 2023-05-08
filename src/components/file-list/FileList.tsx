@@ -59,8 +59,10 @@ export const FileList: React.FC<FileListProps> = React.memo((props: FileListProp
                 return (
                     <>
                         <div className="">
-                            <div className={classes.listContainer} >shaden</div>
+                           <div className={classes.listContainerDisplay} >
+                           <div className={classes.listContainer} >shaden</div>
                             <div  >shaden2</div>
+                           </div>
                             <ListContainer width={width} height={height} />
                         </div>
                     </>
@@ -149,7 +151,16 @@ const useStyles = makeGlobalChonkyStyles(() => ({
     },
     listContainer: {
         borderTop: `solid 1px black`,
-        backgroundColor : "blue"
+        height : "100px",
+        width :"10%",
+       
+    },
+    listContainerDisplay: {
+        borderTop: `solid 1px black`,
+        backgroundColor : "blue",
+        height : "100px",
+        width :"100%",
+        display : "flex"
        
     },
 }));
