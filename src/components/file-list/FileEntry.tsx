@@ -59,14 +59,12 @@ export const SmartFileEntry: React.FC<SmartFileEntryProps> = React.memo(({ fileI
 
     return dndDisabled ? (
         <ClickableWrapper {...clickableWrapperProps}>
-           
             <EntryComponent {...fileEntryProps} dndState={disabledDndState} />
         </ClickableWrapper>
     ) : (
         <DnDFileEntry file={file}>
             {dndState => (
                 <ClickableWrapper {...clickableWrapperProps}>
-                    
                     <EntryComponent {...fileEntryProps} dndState={dndState} />
                 </ClickableWrapper>
             )}
