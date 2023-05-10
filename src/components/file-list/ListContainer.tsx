@@ -51,7 +51,7 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
         const TitleRenderer = (data: { index: number; style: CSSProperties }) => {
             return (
                 <div style={data.style}>
-                   <div className={classes.titleDisplay}>
+                   {/* <div className={classes.titleDisplay}> */}
                     <div className={classes.titlecellNameDisplay}>Name</div>
                     <div className={classes.titlecellDisplay}>Status</div>
                     <div className={classes.titlecellDisplay}>Data modified</div>
@@ -62,7 +62,7 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
                     </div>
                     <div className={classes.titlecellDisplay}>Public Access</div>
                 </div>
-                </div>
+                // </div>
             );
         };
 
