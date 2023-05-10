@@ -92,8 +92,8 @@ const useStyles = makeLocalChonkyStyles(theme => ({
     titleDisplay: {
         display: 'flex',
         flexDirection: 'row',
-        width : "100%" ,
-        // backgroundColor : "red"
+        width : "100vw" ,
+        backgroundColor : "red"
     },
     titlecellDisplay: {
         fontSize: theme.listFileEntry.propertyFontSize,
