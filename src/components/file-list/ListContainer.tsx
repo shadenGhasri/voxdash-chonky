@@ -53,8 +53,11 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
         return (
            <>
            <div className={classes.titleDisplay}>
-            <div>shaden</div>
-            <div>shaden</div>
+            <div style={{width : "40%"}}>shaden</div>
+            <div style={{width : "40%"}}>shaden</div>
+            <div style={{width : "40%"}}>shaden</div>
+            <div style={{width : "40%"}}>shaden</div>
+            <div style={{width : "40%"}}>shaden</div>
            </div>
             <FixedSizeList
                 ref={listRef as any}
