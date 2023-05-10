@@ -47,12 +47,10 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
             );
         };
 
-
         const TitleRenderer = (data: { index: number; style: CSSProperties }) => {
             return (
-               
                 <>
-                {/* //    <div className={classes.titleDisplay}>
+                    {/* //    <div className={classes.titleDisplay}>
                 //     <div className={classes.titlecellNameDisplay}>Name</div>
                 //     <div className={classes.titlecellDisplay}>Status</div>
                 //     <div className={classes.titlecellDisplay}>Data modified</div>
@@ -64,34 +62,57 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
                 //     <div className={classes.titlecellDisplay}>Public Access</div>
                 // </div> */}
 
-<div style={data.style}>
-                    <SmartFileEntry
-                        fileId={displayFileIds[data.index] ?? null}
-                        displayIndex={data.index}
-                        fileViewMode={FileViewMode.List}
-                    />
-                </div>
-                
+                    {/* <div style={data.style}>
+                        <SmartFileEntry
+                            fileId={displayFileIds[data.index] ?? null}
+                            displayIndex={data.index}
+                            fileViewMode={FileViewMode.List}
+                        />
+                    </div> */}
+
+                    <div className={classes.titlecellNameDisplay}>Name</div>
+                    <div className={classes.titlecellDisplay}>Status</div>
+                    <div className={classes.titlecellDisplay}>Data modified</div>
+                    <div className={classes.titlecellDisplay}>% complition</div>
+                    <div className={classes.titlecellDisplay}>Usage report</div>
+                    <div className={classes.titlecellDisplay}>
+                        Organizational Access
+                    </div>
                 </>
-               
             );
         };
 
         return (
             <>
-                 <FixedSizeList
-                    ref={listRef as any}
-                    className={classes.listContainer}
-                    itemSize={viewConfig.entryHeight}
-                    height={height}
+                <FixedSizeList
+                    // ref={listRef as any}
+                    // className={classes.listContainer}
+                    // itemSize={viewConfig.entryHeight}
+                    // height={height}
+                    // itemCount={displayFileIds.length}
+                    // width={width}
+                    // itemKey={getItemKey}
+                    height={75}
                     itemCount={displayFileIds.length}
+                    itemSize={viewConfig.entryHeight}
+                    layout="horizontal"
                     width={width}
-                    itemKey={getItemKey}
                 >
                     {TitleRenderer}
                 </FixedSizeList>
 
-                
+                {/* <div className={classes.titleDisplay}>
+                    <div className={classes.titlecellNameDisplay}>Name</div>
+                    <div className={classes.titlecellDisplay}>Status</div>
+                    <div className={classes.titlecellDisplay}>Data modified</div>
+                    <div className={classes.titlecellDisplay}>% complition</div>
+                    <div className={classes.titlecellDisplay}>Usage report</div>
+                    <div className={classes.titlecellDisplay}>
+                        Organizational Access
+                    </div>
+                    <div className={classes.titlecellDisplay}>Public Access</div>
+                </div> */}
+
                 <FixedSizeList
                     ref={listRef as any}
                     className={classes.listContainer}
@@ -124,7 +145,7 @@ const useStyles = makeLocalChonkyStyles(theme => ({
     titleDisplay: {
         display: 'flex',
         flexDirection: 'row',
-        width : "max-content" ,
+        width: 'max-content',
         // backgroundColor : "red"
     },
     titlecellDisplay: {
@@ -136,7 +157,6 @@ const useStyles = makeLocalChonkyStyles(theme => ({
         padding: [2, 8],
         zIndex: 20,
         color: '#9AA9BF',
-
     },
     titlecellNameDisplay: {
         textOverflow: 'ellipsis',
