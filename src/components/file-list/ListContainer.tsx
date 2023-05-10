@@ -38,41 +38,40 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
         const rowRenderer = (data: { index: number; style: CSSProperties }) => {
             return (
                 <div style={data.style}>
-                    
                     <SmartFileEntry
                         fileId={displayFileIds[data.index] ?? null}
                         displayIndex={data.index}
                         fileViewMode={FileViewMode.List}
                     />
-                    
-                 
                 </div>
             );
         };
 
         return (
-           <>
-           <div className={classes.titleDisplay}>
-            <div  className={classes.titlecellNameDisplay}  >Name</div>
-            <div  className={classes.titlecellDisplay}  >Status</div>
-            <div  className={classes.titlecellDisplay}  >Data modified</div>
-            <div  className={classes.titlecellDisplay}  >% complition</div>
-            <div  className={classes.titlecellDisplay}  >Usage report</div>
-            <div  className={classes.titlecellDisplay}  >Organizational Access</div>
-            <div  className={classes.titlecellDisplay} >Public Access</div>
-           </div>
-            <FixedSizeList
-                ref={listRef as any}
-                className={classes.listContainer}
-                itemSize={viewConfig.entryHeight}
-                height={height}
-                itemCount={displayFileIds.length}
-                width={width}
-                itemKey={getItemKey}
-            >
-                {rowRenderer}
-            </FixedSizeList>
-           </>
+            <>
+                <div className={classes.titleDisplay}>
+                    <div className={classes.titlecellNameDisplay}>Name</div>
+                    <div className={classes.titlecellDisplay}>Status</div>
+                    <div className={classes.titlecellDisplay}>Data modified</div>
+                    <div className={classes.titlecellDisplay}>% complition</div>
+                    <div className={classes.titlecellDisplay}>Usage report</div>
+                    <div className={classes.titlecellDisplay}>
+                        Organizational Access
+                    </div>
+                    <div className={classes.titlecellDisplay}>Public Access</div>
+                </div>
+                <FixedSizeList
+                    ref={listRef as any}
+                    className={classes.listContainer}
+                    itemSize={viewConfig.entryHeight}
+                    height={height}
+                    itemCount={displayFileIds.length}
+                    width={width}
+                    itemKey={getItemKey}
+                >
+                    {rowRenderer}
+                </FixedSizeList>
+            </>
         );
     }, [
         classes.listContainer,
@@ -88,14 +87,13 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
 
 const useStyles = makeLocalChonkyStyles(theme => ({
     listContainer: {
-        borderTop: `solid 1px ${theme.palette.divider}`,  
+        borderTop: `solid 1px ${theme.palette.divider}`,
     },
     titleDisplay: {
-        display: "flex",
-        flexDirection: "row",
-        // width : "100vw",
+        display: 'flex',
+        flexDirection: 'row',
+        // width : "100vw" ,
         // backgroundColor : "red"
-
     },
     titlecellDisplay: {
         fontSize: theme.listFileEntry.propertyFontSize,
@@ -105,8 +103,8 @@ const useStyles = makeLocalChonkyStyles(theme => ({
         flex: '0 1 150px',
         padding: [2, 8],
         zIndex: 20,
-        color : "#9AA9BF"
-
+        color: '#9AA9BF',
+        width : "15%" ,
     },
     titlecellNameDisplay: {
         textOverflow: 'ellipsis',
@@ -116,7 +114,7 @@ const useStyles = makeLocalChonkyStyles(theme => ({
         flex: '1 1 300px',
         paddingLeft: 8,
         zIndex: 20,
-        color : "#9AA9BF"
-
+        color: '#9AA9BF',
+        width : "15%" ,
     },
 }));
