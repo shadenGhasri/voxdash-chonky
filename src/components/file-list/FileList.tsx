@@ -155,7 +155,8 @@ const useStyles = makeGlobalChonkyStyles(() => ({
     titleDisplay: {
         display: "flex",
         flexDirection: "row",
-        width : "100%"
+        width : "100%",
+        backgroundColor : "red"
 
     },
   
