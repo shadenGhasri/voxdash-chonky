@@ -59,7 +59,7 @@ export const FileList: React.FC<FileListProps> = React.memo((props: FileListProp
                 return (
                     <>
                         <div >
-                           <div className={classes.titleDisplay} >
+                           <div style={{width : "100%" , backgroundColor : "red" , display : "inline-flex"}} >
                            <div style={{width : "20%"}}>shaden</div>
                             <div style={{width : "20%"}}>shaden</div>
                             <div style={{width : "20%"}}>shaden</div>
