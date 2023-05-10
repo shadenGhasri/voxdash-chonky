@@ -51,6 +51,7 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
             return (
                 <>
 
+                    <div  className={classes.titleDisplay}>
                     <div className={classes.titlecellNameDisplay}>Name</div>
                     <div className={classes.titlecellDisplay}>Status</div>
                     <div className={classes.titlecellDisplay}>Data modified</div>
@@ -58,6 +59,7 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
                     <div className={classes.titlecellDisplay}>Usage report</div>
                     <div className={classes.titlecellDisplay}>
                         Organizational Access
+                    </div>
                     </div>
                 </>
             );
@@ -69,14 +71,24 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
                 
                     height={75}
                     itemCount={displayFileIds.length}
-                    itemSize={viewConfig.entryHeight}
+                    itemSize={6}
                     layout="horizontal"
                     width={width}
                 >
                     {TitleRenderer}
                 </FixedSizeList>
 
-
+                {/* <div className={classes.titleDisplay}>
+                    <div className={classes.titlecellNameDisplay}>Name</div>
+                    <div className={classes.titlecellDisplay}>Status</div>
+                    <div className={classes.titlecellDisplay}>Data modified</div>
+                    <div className={classes.titlecellDisplay}>% complition</div>
+                    <div className={classes.titlecellDisplay}>Usage report</div>
+                    <div className={classes.titlecellDisplay}>
+                        Organizational Access
+                    </div>
+                    <div className={classes.titlecellDisplay}>Public Access</div>
+                </div> */}
 
                 <FixedSizeList
                     ref={listRef as any}
