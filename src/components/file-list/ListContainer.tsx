@@ -47,9 +47,11 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
             );
         };
 
-        return (
-            <>
-                <div className={classes.titleDisplay}>
+
+        const TitleRenderer = (data: { index: number; style: CSSProperties }) => {
+            return (
+                <div style={data.style}>
+                   <div className={classes.titleDisplay}>
                     <div className={classes.titlecellNameDisplay}>Name</div>
                     <div className={classes.titlecellDisplay}>Status</div>
                     <div className={classes.titlecellDisplay}>Data modified</div>
@@ -60,6 +62,25 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
                     </div>
                     <div className={classes.titlecellDisplay}>Public Access</div>
                 </div>
+                </div>
+            );
+        };
+
+        return (
+            <>
+                 <FixedSizeList
+                    ref={listRef as any}
+                    className={classes.listContainer}
+                    itemSize={viewConfig.entryHeight}
+                    height={height}
+                    itemCount={displayFileIds.length}
+                    width={width}
+                    itemKey={getItemKey}
+                >
+                    {TitleRenderer}
+                </FixedSizeList>
+
+                
                 <FixedSizeList
                     ref={listRef as any}
                     className={classes.listContainer}
