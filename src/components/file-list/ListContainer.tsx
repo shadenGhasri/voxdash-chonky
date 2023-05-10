@@ -34,7 +34,6 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
 
     const classes = useStyles();
     const listComponent = useMemo(() => {
-        // When entry size is null, we use List view
         const rowRenderer = (data: { index: number; style: CSSProperties }) => {
             return (
                 <div style={data.style}>
