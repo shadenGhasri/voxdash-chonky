@@ -62,7 +62,7 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
                     </div>
 
                     <div
-                        className={classes.listFileEntryProperty}
+                        className={classes.listFileEntryName}
                         title={file ? file.name : undefined}
                     >
                         <FileEntryName file={file} />

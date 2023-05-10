@@ -53,7 +53,7 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
         return (
            <>
            <div className={classes.titleDisplay}>
-            <div  className={classes.titlecellDisplay}  >Name</div>
+            <div  className={classes.titlecellNameDisplay}  >Name</div>
             <div  className={classes.titlecellDisplay}  >Status</div>
             <div  className={classes.titlecellDisplay}  >Data modified</div>
             <div  className={classes.titlecellDisplay}  >% complition</div>
@@ -93,7 +93,7 @@ const useStyles = makeLocalChonkyStyles(theme => ({
     titleDisplay: {
         display: "flex",
         flexDirection: "row",
-        width : "100vw",
+        // width : "100vw",
         // backgroundColor : "red"
 
     },
@@ -104,6 +104,17 @@ const useStyles = makeLocalChonkyStyles(theme => ({
         overflow: 'hidden',
         flex: '0 1 150px',
         padding: [2, 8],
+        zIndex: 20,
+        color : "#9AA9BF"
+
+    },
+    titlecellNameDisplay: {
+        textOverflow: 'ellipsis',
+        boxSizing: 'border-box',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        flex: '1 1 300px',
+        paddingLeft: 8,
         zIndex: 20,
         color : "#9AA9BF"
 
