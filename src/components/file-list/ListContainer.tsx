@@ -49,7 +49,7 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
         const TitleRenderer = () => {
             return (
                 <>
-                    {/* <div className={classes.titleDisplay}> */}
+                    <div className={classes.titleDisplay}>
                         <div className={classes.titlecellNameDisplay}>Name</div>
                         <div className={classes.titlecellDisplay}>Status</div>
                         <div className={classes.titlecellDisplay}>Data modified</div>
@@ -58,7 +58,7 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
                         <div className={classes.titlecellDisplay}>
                             Organizational Access
                         </div>
-                    {/* </div> */}
+                    </div>
                 </>
             );
         };
@@ -70,11 +70,10 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
                     itemKey={getItemKey}
                     height={25}
                     itemCount={7}
-                    // itemSize={viewConfig.entryHeight}
+                    itemSize={viewConfig.entryHeight}
                     layout="horizontal"
-                    // width={width}
-                    itemSize={100}
-                    width={300}
+                    width={width}
+                   
                 >
                     {TitleRenderer}
                 </FixedSizeList>
