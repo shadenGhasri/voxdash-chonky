@@ -49,7 +49,7 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
         const TitleRenderer = () => {
             return (
                 <>
-                    <div className={classes.titleDisplay}>
+                    {/* <div className={classes.titleDisplay}> */}
                         <div className={classes.titlecellNameDisplay}>Name</div>
                         <div className={classes.titlecellDisplay}>Status</div>
                         <div className={classes.titlecellDisplay}>Data modified</div>
@@ -58,7 +58,7 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
                         <div className={classes.titlecellDisplay}>
                             Organizational Access
                         </div>
-                    </div>
+                    {/* </div> */}
                 </>
             );
         };
@@ -70,7 +70,7 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
                     itemKey={getItemKey}
                     height={35}
                     itemCount={1}
-                    itemSize={1500}
+                    itemSize={1000}
                     layout="horizontal"
                     width={1000}
                    
@@ -130,6 +130,7 @@ const useStyles = makeLocalChonkyStyles(theme => ({
         boxSizing: 'border-box',
         whiteSpace: 'nowrap',
         overflow: 'hidden',
+        display: 'flex',
         flex: '0 1 150px',
         padding: [2, 8],
         zIndex: 20,
@@ -140,6 +141,7 @@ const useStyles = makeLocalChonkyStyles(theme => ({
         boxSizing: 'border-box',
         whiteSpace: 'nowrap',
         overflow: 'hidden',
+        display: 'flex',
         flex: '1 1 300px',
         paddingLeft: 8,
         zIndex: 20,
