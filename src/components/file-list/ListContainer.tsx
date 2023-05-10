@@ -69,7 +69,7 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
                 <FixedSizeList
                     ref={listRef as any}
                     itemKey={getItemKey}
-                    height={15}
+                    height={25}
                     itemCount={1}
                     itemSize={viewConfig.entryHeight}
                     layout="horizontal"
@@ -122,7 +122,7 @@ const useStyles = makeLocalChonkyStyles(theme => ({
     titleDisplay: {
         display: 'flex',
         flexDirection: 'row',
-        width: 'max-content',
+        width: '100%',
         // backgroundColor : "red"
     },
     titlecellDisplay: {
