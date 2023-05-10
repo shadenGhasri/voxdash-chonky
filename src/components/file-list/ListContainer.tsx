@@ -79,7 +79,7 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
                     {/* </div> */}
 
                     <div style={style}>
-      {id}: {name}
+      {id}: {title}
     </div>
                 </>
             );
