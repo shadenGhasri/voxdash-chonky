@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Nullable } from 'tsdef';
-
 import { selectFileData, selectIsDnDDisabled, selectIsFileSelected } from '../../redux/selectors';
 import { useParamSelector } from '../../redux/store';
 import { DndEntryState, FileEntryProps } from '../../types/file-list.types';
