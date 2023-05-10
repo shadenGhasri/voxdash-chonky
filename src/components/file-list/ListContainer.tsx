@@ -69,10 +69,10 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
                     ref={listRef as any}
                     itemKey={getItemKey}
                     height={35}
-                    itemCount={7}
+                    itemCount={1}
                     itemSize={viewConfig.entryHeight}
                     layout="horizontal"
-                    width={800}
+                    width={1000}
                    
                 >
                     {TitleRenderer}
