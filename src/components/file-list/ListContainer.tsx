@@ -53,11 +53,13 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
         return (
            <>
            <div className={classes.titleDisplay}>
-            <div style={{width : "40%"}}>shaden</div>
-            <div style={{width : "40%"}}>shaden</div>
-            <div style={{width : "40%"}}>shaden</div>
-            <div style={{width : "40%"}}>shaden</div>
-            <div style={{width : "40%"}}>shaden</div>
+            <div  className={classes.titlecellDisplay}  >Name</div>
+            <div  className={classes.titlecellDisplay}  >Status</div>
+            <div  className={classes.titlecellDisplay}  >Data modified</div>
+            <div  className={classes.titlecellDisplay}  >% complition</div>
+            <div  className={classes.titlecellDisplay}  >Usage report</div>
+            <div  className={classes.titlecellDisplay}  >Organizational Access</div>
+            <div  className={classes.titlecellDisplay} >Public Access</div>
            </div>
             <FixedSizeList
                 ref={listRef as any}
@@ -91,8 +93,19 @@ const useStyles = makeLocalChonkyStyles(theme => ({
     titleDisplay: {
         display: "flex",
         flexDirection: "row",
-        width : "100vw",
-        backgroundColor : "red"
+        width : "100%",
+        // backgroundColor : "red"
+
+    },
+    titlecellDisplay: {
+        fontSize: theme.listFileEntry.propertyFontSize,
+        boxSizing: 'border-box',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        flex: '0 1 150px',
+        padding: [2, 8],
+        zIndex: 20,
+        color : "#9AA9BF"
 
     },
 }));
