@@ -70,8 +70,8 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
                 <FixedSizeList
                 
                     height={75}
-                    itemCount={displayFileIds.length}
-                    itemSize={6}
+                    itemCount={6}
+                    itemSize={viewConfig.entryHeight}
                     layout="horizontal"
                     width={width}
                 >
