@@ -7,7 +7,6 @@
 import React, { CSSProperties, useCallback, useMemo, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { FixedSizeList } from 'react-window';
-
 import { selectFileViewConfig, selectors } from '../../redux/selectors';
 import { FileViewMode } from '../../types/file-view.types';
 import { useInstanceVariable } from '../../util/hooks-helpers';
