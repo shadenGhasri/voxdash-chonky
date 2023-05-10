@@ -93,7 +93,7 @@ const useStyles = makeLocalChonkyStyles(theme => ({
     titleDisplay: {
         display: "flex",
         flexDirection: "row",
-        width : "100%",
+        width : "100vw",
         // backgroundColor : "red"
 
     },
