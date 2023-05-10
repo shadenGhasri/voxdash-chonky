@@ -46,30 +46,18 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
             );
         };
 
-        type RowProps = {
-            index: number;
-            style: React.CSSProperties;
-            data: any;
-          }
+        
 
-        const title : any = [
-            { id: 0, name: 'Name' },
-            { id: 1, name: 'Status' },
-            { id: 2, name: 'Data modified' },
+        const TitleRenderer = (data: { index: number; style: CSSProperties }) => {
 
-            { id: 3, name: '% complition' },
-            { id: 4, name: 'Usage report' },
-            { id: 5, name: 'Organizational Access' },
-        ];
+           
 
-        const TitleRenderer = ({ index, style, data }: RowProps) => {
 
-            const { id, name } = data[index];
             return (
                 <>
                     {/* <div className={classes.titleDisplay}> */}
-                    {/* <div className={classes.titlecellNameDisplay}>Name</div> */}
-                    {/* <div className={classes.titlecellDisplay}>Status</div>
+                        {/* <div className={classes.titlecellNameDisplay}>Name</div> */}
+                        {/* <div className={classes.titlecellDisplay}>Status</div>
                         <div className={classes.titlecellDisplay}>Data modified</div>
                         <div className={classes.titlecellDisplay}>% complition</div>
                         <div className={classes.titlecellDisplay}>Usage report</div>
@@ -78,9 +66,13 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
                         </div> */}
                     {/* </div> */}
 
-                    <div style={style}>
-      {id}: {title}
-    </div>
+                    <div style={data.style}>
+                    <SmartFileEntry
+                        fileId={displayFileIds[data.index] ?? null}
+                        displayIndex={data.index}
+                        fileViewMode={FileViewMode.List}
+                    />
+                </div>
                 </>
             );
         };
@@ -95,6 +87,7 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
                     itemSize={100}
                     layout="horizontal"
                     width={1000}
+                   
                 >
                     {TitleRenderer}
                 </FixedSizeList>
