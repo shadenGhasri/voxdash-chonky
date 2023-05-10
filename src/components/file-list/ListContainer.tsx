@@ -47,28 +47,9 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
             );
         };
 
-        const TitleRenderer = (data: { index: number; style: CSSProperties }) => {
+        const TitleRenderer = () => {
             return (
                 <>
-                    {/* //    <div className={classes.titleDisplay}>
-                //     <div className={classes.titlecellNameDisplay}>Name</div>
-                //     <div className={classes.titlecellDisplay}>Status</div>
-                //     <div className={classes.titlecellDisplay}>Data modified</div>
-                //     <div className={classes.titlecellDisplay}>% complition</div>
-                //     <div className={classes.titlecellDisplay}>Usage report</div>
-                //     <div className={classes.titlecellDisplay}>
-                //         Organizational Access
-                //     </div>
-                //     <div className={classes.titlecellDisplay}>Public Access</div>
-                // </div> */}
-
-                    {/* <div style={data.style}>
-                        <SmartFileEntry
-                            fileId={displayFileIds[data.index] ?? null}
-                            displayIndex={data.index}
-                            fileViewMode={FileViewMode.List}
-                        />
-                    </div> */}
 
                     <div className={classes.titlecellNameDisplay}>Name</div>
                     <div className={classes.titlecellDisplay}>Status</div>
@@ -85,13 +66,7 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
         return (
             <>
                 <FixedSizeList
-                    // ref={listRef as any}
-                    // className={classes.listContainer}
-                    // itemSize={viewConfig.entryHeight}
-                    // height={height}
-                    // itemCount={displayFileIds.length}
-                    // width={width}
-                    // itemKey={getItemKey}
+                
                     height={75}
                     itemCount={displayFileIds.length}
                     itemSize={viewConfig.entryHeight}
@@ -101,17 +76,7 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
                     {TitleRenderer}
                 </FixedSizeList>
 
-                {/* <div className={classes.titleDisplay}>
-                    <div className={classes.titlecellNameDisplay}>Name</div>
-                    <div className={classes.titlecellDisplay}>Status</div>
-                    <div className={classes.titlecellDisplay}>Data modified</div>
-                    <div className={classes.titlecellDisplay}>% complition</div>
-                    <div className={classes.titlecellDisplay}>Usage report</div>
-                    <div className={classes.titlecellDisplay}>
-                        Organizational Access
-                    </div>
-                    <div className={classes.titlecellDisplay}>Public Access</div>
-                </div> */}
+
 
                 <FixedSizeList
                     ref={listRef as any}
