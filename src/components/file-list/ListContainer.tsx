@@ -51,6 +51,11 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
         };
 
         return (
+           <>
+           <div className={classes.titleDisplay}>
+            <div>shaden</div>
+            <div>shaden</div>
+           </div>
             <FixedSizeList
                 ref={listRef as any}
                 className={classes.listContainer}
@@ -62,6 +67,7 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
             >
                 {rowRenderer}
             </FixedSizeList>
+           </>
         );
     }, [
         classes.listContainer,
@@ -77,7 +83,13 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
 
 const useStyles = makeLocalChonkyStyles(theme => ({
     listContainer: {
-        borderTop: `solid 1px ${theme.palette.divider}`,
-       
+        borderTop: `solid 1px ${theme.palette.divider}`,  
+    },
+    titleDisplay: {
+        display: "flex",
+        flexDirection: "row",
+        width : "100vw",
+        backgroundColor : "red"
+
     },
 }));

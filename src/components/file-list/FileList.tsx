@@ -59,12 +59,7 @@ export const FileList: React.FC<FileListProps> = React.memo((props: FileListProp
                 return (
                     <>
                         <div >
-                           <div style={{width : "100%" , backgroundColor : "red" , display : "inline-flex"}} >
-                           <div style={{width : "20%"}}>shaden</div>
-                            <div style={{width : "20%"}}>shaden</div>
-                            <div style={{width : "20%"}}>shaden</div>
-                            <div style={{width : "20%"}}>shaden</div>
-                           </div>
+                        
                             <ListContainer width={width} height={height} />
                         </div>
                     </>
@@ -152,13 +147,7 @@ const useStyles = makeGlobalChonkyStyles(() => ({
         height: '100%',
         maxHeight: '100%',
     },
-    titleDisplay: {
-        display: "flex",
-        flexDirection: "row",
-        width : "100%",
-        backgroundColor : "red"
 
-    },
   
   
 }));
