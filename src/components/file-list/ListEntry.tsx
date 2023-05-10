@@ -121,7 +121,7 @@ const useStyles = makeLocalChonkyStyles(theme => ({
         alignItems: 'center',
         position: 'relative',
         display: 'flex',
-        height: '100%',
+        height: '100vw',
     },
     listFileEntrySelection: {
         opacity: 0.6,
