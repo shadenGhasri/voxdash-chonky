@@ -92,8 +92,8 @@ const useStyles = makeLocalChonkyStyles(theme => ({
     titleDisplay: {
         display: 'flex',
         flexDirection: 'row',
-        width : "100vw" ,
-        backgroundColor : "red"
+        width : "max-content" ,
+        // backgroundColor : "red"
     },
     titlecellDisplay: {
         fontSize: theme.listFileEntry.propertyFontSize,
@@ -104,7 +104,7 @@ const useStyles = makeLocalChonkyStyles(theme => ({
         padding: [2, 8],
         zIndex: 20,
         color: '#9AA9BF',
-        width : "15%" ,
+
     },
     titlecellNameDisplay: {
         textOverflow: 'ellipsis',
@@ -115,6 +115,5 @@ const useStyles = makeLocalChonkyStyles(theme => ({
         paddingLeft: 8,
         zIndex: 20,
         color: '#9AA9BF',
-        width : "15%" ,
     },
 }));

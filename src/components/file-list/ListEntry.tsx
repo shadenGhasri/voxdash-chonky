@@ -44,20 +44,6 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
         return (
             <div className={classes.listFileDisplay} >
 
-
-
-<div className={classes.titleDisplay}>
-                    <div className={classes.titlecellNameDisplay}>Name</div>
-                    <div className={classes.titlecellDisplay}>Status</div>
-                    <div className={classes.titlecellDisplay}>Data modified</div>
-                    <div className={classes.titlecellDisplay}>% complition</div>
-                    <div className={classes.titlecellDisplay}>Usage report</div>
-                    <div className={classes.titlecellDisplay}>
-                        Organizational Access
-                    </div>
-                    <div className={classes.titlecellDisplay}>Public Access</div>
-                </div>
-
                 <div className={classes.listFileEntry} {...fileEntryHtmlProps}>
                 
                     <div className={commonClasses.focusIndicator}></div>
@@ -182,6 +168,5 @@ const useStyles = makeLocalChonkyStyles(theme => ({
         width : "100%"
 
     },
- 
     
 }));
