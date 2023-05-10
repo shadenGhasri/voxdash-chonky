@@ -53,13 +53,13 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
           }
 
         const title : any = [
-            { id: 1, name: 'Name' },
-            { id: 2, name: 'Status' },
-            { id: 3, name: 'Data modified' },
+            { id: 0, name: 'Name' },
+            { id: 1, name: 'Status' },
+            { id: 2, name: 'Data modified' },
 
-            { id: 4, name: '% complition' },
-            { id: 5, name: 'Usage report' },
-            { id: 6, name: 'Organizational Access' },
+            { id: 3, name: '% complition' },
+            { id: 4, name: 'Usage report' },
+            { id: 5, name: 'Organizational Access' },
         ];
 
         const TitleRenderer = ({ index, style, data }: RowProps) => {
