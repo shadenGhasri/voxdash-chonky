@@ -107,7 +107,7 @@ const useStyles = makeGlobalChonkyStyles(theme => ({
     searchFieldContainer: {
         height: theme.toolbar.size,
         width: 250,
-        marginLeft : "20px"
+       
 
     },
     searchIcon: {

@@ -25,12 +25,11 @@ export const FileToolbar: React.FC<FileToolbarProps> = React.memo(() => {
                     <SmartToolbarButton key={key} fileActionId={item} />
                 ) : (
                     <>
-                    <ToolbarDropdown
-                        key={key}
-                        name={item.name}
-                        fileActionIds={item.fileActionIds}
-                    />
-                   
+                        <ToolbarDropdown
+                            key={key}
+                            name={item.name}
+                            fileActionIds={item.fileActionIds}
+                        />
                     </>
                 );
             components.push(component);
@@ -45,7 +44,8 @@ export const FileToolbar: React.FC<FileToolbarProps> = React.memo(() => {
                     {/* <ToolbarSearch /> */}
                     <ToolbarInfo />
                 </div>
-                <div className={classes.toolbarRight}>{toolbarItemComponents}  <ToolbarSearch /></div>
+                <div className={classes.toolbarRight}>{toolbarItemComponents} </div>
+                <ToolbarSearch />
             </div>
         </div>
     );
@@ -70,6 +70,6 @@ const useStyles = makeGlobalChonkyStyles(theme => ({
         paddingBottom: theme.margins.rootLayoutMargin,
         flexWrap: 'nowrap',
         display: 'flex',
-       
+        marginRight: '20px',
     },
 }));
