@@ -48,7 +48,7 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
 
         
 
-        const TitleRenderer = (data: { index: number; style: CSSProperties }) => {
+        const TitleRenderer = () => {
 
            
 
@@ -136,7 +136,7 @@ const useStyles = makeLocalChonkyStyles(theme => ({
     titleDisplay: {
         display: 'flex',
         flexDirection: 'row',
-        // width: '100%',
+        width: '100%',
         // backgroundColor : "red"
     },
     titlecellDisplay: {
