@@ -70,5 +70,6 @@ const useStyles = makeGlobalChonkyStyles(theme => ({
         paddingBottom: theme.margins.rootLayoutMargin,
         flexWrap: 'nowrap',
         display: 'flex',
+        marginRight : "20px"
     },
 }));
