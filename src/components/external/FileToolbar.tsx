@@ -30,6 +30,7 @@ export const FileToolbar: React.FC<FileToolbarProps> = React.memo(() => {
                         name={item.name}
                         fileActionIds={item.fileActionIds}
                     />
+                    <ToolbarSearch />
                     </>
                 );
             components.push(component);

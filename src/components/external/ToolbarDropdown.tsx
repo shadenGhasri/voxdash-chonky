@@ -56,7 +56,7 @@ export const ToolbarDropdown: React.FC<ToolbarDropdownProps> = React.memo(props 
             >
                 {menuItemComponents}
             </Menu>
-            <ToolbarSearch />
+            
         </>
     );
 });
