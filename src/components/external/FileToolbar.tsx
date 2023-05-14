@@ -30,7 +30,7 @@ export const FileToolbar: React.FC<FileToolbarProps> = React.memo(() => {
                         name={item.name}
                         fileActionIds={item.fileActionIds}
                     />
-                    <ToolbarSearch />
+                   
                     </>
                 );
             components.push(component);
@@ -45,7 +45,7 @@ export const FileToolbar: React.FC<FileToolbarProps> = React.memo(() => {
                     {/* <ToolbarSearch /> */}
                     <ToolbarInfo />
                 </div>
-                <div className={classes.toolbarRight}>{toolbarItemComponents}</div>
+                <div className={classes.toolbarRight}>{toolbarItemComponents}  <ToolbarSearch /></div>
             </div>
         </div>
     );
