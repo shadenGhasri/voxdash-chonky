@@ -79,7 +79,7 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
 
         return (
             <>
-                <FixedSizeList
+                {/* <FixedSizeList
                     ref={listRef as any}
                     itemKey={getItemKey}
                     height={35}
@@ -90,9 +90,9 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
                    
                 >
                     {TitleRenderer}
-                </FixedSizeList>
+                </FixedSizeList> */}
 
-                {/* <div className={classes.titleDisplay}>
+                <div className={classes.titleDisplay}>
                     <div className={classes.titlecellNameDisplay}>Name</div>
                     <div className={classes.titlecellDisplay}>Status</div>
                     <div className={classes.titlecellDisplay}>Data modified</div>
@@ -102,7 +102,7 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
                         Organizational Access
                     </div>
                     <div className={classes.titlecellDisplay}>Public Access</div>
-                </div> */}
+                </div>
 
                 <FixedSizeList
                     ref={listRef as any}
