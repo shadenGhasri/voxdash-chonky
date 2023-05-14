@@ -55,24 +55,24 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
 
             return (
                 <>
-                    {/* <div className={classes.titleDisplay}> */}
-                        {/* <div className={classes.titlecellNameDisplay}>Name</div> */}
-                        {/* <div className={classes.titlecellDisplay}>Status</div>
+                    <div className={classes.titleDisplay}>
+                        <div className={classes.titlecellNameDisplay}>Name</div> 
+                      <div className={classes.titlecellDisplay}>Status</div>
                         <div className={classes.titlecellDisplay}>Data modified</div>
                         <div className={classes.titlecellDisplay}>% complition</div>
                         <div className={classes.titlecellDisplay}>Usage report</div>
                         <div className={classes.titlecellDisplay}>
                             Organizational Access
-                        </div> */}
-                    {/* </div> */}
+                        </div> 
+                    </div>
 
-                    <div style={data.style}>
+                    {/* <div style={data.style}>
                     <SmartFileEntry
                         fileId={displayFileIds[data.index] ?? null}
                         displayIndex={data.index}
                         fileViewMode={FileViewMode.List}
                     />
-                </div>
+                </div> */}
                 </>
             );
         };
