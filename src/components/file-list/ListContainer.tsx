@@ -12,15 +12,20 @@ import { FileViewMode } from '../../types/file-view.types';
 import { useInstanceVariable } from '../../util/hooks-helpers';
 import { makeLocalChonkyStyles } from '../../util/styles';
 import { SmartFileEntry } from './FileEntry';
+import { useParamSelector } from '../../redux/store';
+
+
 
 export interface FileListListProps {
     width: any;
     height: any;
+
 }
 
 export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
     const { width, height } = props;
-
+   
+    const store = useSelector(state => state);
     const viewConfig = useSelector(selectFileViewConfig);
 
     const listRef = useRef<FixedSizeList>();
@@ -58,7 +63,7 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
                     <div className={classes.titleDisplay}>
                         <div className={classes.titlecellNameDisplay}>Name</div> 
                       <div className={classes.titlecellDisplay}>Status</div>
-                        <div className={classes.titlecellDisplay}>Data modified</div>
+                        <div className={classes.titlecellDisplay} onClick = {()=>{ prompt(`file `)}} >Data modified</div>
                         <div className={classes.titlecellDisplay}>% complition</div>
                         <div className={classes.titlecellDisplay}>Usage report</div>
                         <div className={classes.titlecellDisplay}>
@@ -95,7 +100,7 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
                 <div className={classes.titleDisplay}>
                     <div className={classes.titlecellNameDisplay}>Name</div>
                     <div className={classes.titlecellDisplay}>Status</div>
-                    <div className={classes.titlecellDisplay}>Data modified</div>
+                    <div className={classes.titlecellDisplay}  onClick = {()=>{  console.log( "shaden ghasriiiiiiiiii " ,store);}} >Data modified</div>
                     <div className={classes.titlecellDisplay}>% complition</div>
                     <div className={classes.titlecellDisplay}>Usage report</div>
                     <div className={classes.titlecellDisplay}>
@@ -149,6 +154,7 @@ const useStyles = makeLocalChonkyStyles(theme => ({
         padding: [2, 8],
         zIndex: 20,
         color: '#9AA9BF',
+        cursor: "pointer" ,
     },
     titlecellNameDisplay: {
         textOverflow: 'ellipsis',

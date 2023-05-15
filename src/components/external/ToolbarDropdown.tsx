@@ -44,7 +44,7 @@ export const ToolbarDropdown: React.FC<ToolbarDropdownProps> = React.memo(props 
     return (
         <>
             <ToolbarButton text={localizedName} onClick={handleClick} dropdown={true} />
-            {/* <Menu
+            <Menu
                 autoFocus
                 keepMounted
                 elevation={2}
@@ -55,7 +55,7 @@ export const ToolbarDropdown: React.FC<ToolbarDropdownProps> = React.memo(props 
                 classes={{ list: classes.dropdownList }}
             >
                 {menuItemComponents}
-            </Menu> */}
+            </Menu>
             
         </>
     );

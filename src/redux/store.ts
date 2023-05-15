@@ -1,6 +1,5 @@
 import { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
 import { configureStore } from '@reduxjs/toolkit';
 
 import { RootState } from '../types/redux.types';

@@ -37,6 +37,7 @@ export const ToolbarDropdownButton = React.forwardRef(
             [classes.activeButton]: active,
         });
         return (
+         <>
             <MenuItem
                 ref={ref}
                 className={className}
@@ -52,6 +53,7 @@ export const ToolbarDropdownButton = React.forwardRef(
                     {text}
                 </ListItemText>
             </MenuItem>
+         </>
         );
     }
 );
