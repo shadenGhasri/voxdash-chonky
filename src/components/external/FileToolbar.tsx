@@ -10,6 +10,11 @@ import { ToolbarSearch } from './ToolbarSearch';
 
 export interface FileToolbarProps {}
 
+
+
+
+
+
 export const FileToolbar: React.FC<FileToolbarProps> = React.memo(() => {
     const classes = useStyles();
     const toolbarItems = useSelector(selectToolbarItems);
@@ -46,7 +51,7 @@ export const FileToolbar: React.FC<FileToolbarProps> = React.memo(() => {
                 <div className={classes.toolbarLeft}>
                     <ToolbarInfo />
                 </div>
-                <div className={classes.toolbarItem}>New project</div>
+                <div className={classes.toolbarItem}  >New project</div>
                 <div className={classes.toolbarItem}>Bulk Project Upload</div>
                
 
