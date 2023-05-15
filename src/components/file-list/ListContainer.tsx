@@ -42,6 +42,7 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
         const rowRenderer = (data: { index: number; style: CSSProperties }) => {
             return (
                 <div style={data.style}>
+                    
                     <SmartFileEntry
                         fileId={displayFileIds[data.index] ?? null}
                         displayIndex={data.index}
@@ -97,10 +98,10 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
                     {TitleRenderer}
                 </FixedSizeList> */}
 
-                <div className={classes.titleDisplay}>
+                <div className={classes.titleDisplay} style={{width: `${width}px`}}>
                     <div className={classes.titlecellNameDisplay}>Name</div>
                     <div className={classes.titlecellDisplay}>Status</div>
-                    <div className={classes.titlecellDisplay}  onClick = {()=>{  console.log( "shaden ghasriiiiiiiiii " ,store);}} >Data modified</div>
+                    <div className={classes.titlecellDisplay}  onClick = {()=>{  prompt(width)}} >Data modified</div>
                     <div className={classes.titlecellDisplay}>% complition</div>
                     <div className={classes.titlecellDisplay}>Usage report</div>
                     <div className={classes.titlecellDisplay}>
@@ -141,7 +142,7 @@ const useStyles = makeLocalChonkyStyles(theme => ({
     titleDisplay: {
         display: 'flex',
         flexDirection: 'row',
-        width: '100vw',
+        // width: `${width}px`,
         // backgroundColor : "red"
     },
     titlecellDisplay: {

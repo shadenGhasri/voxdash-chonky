@@ -49,8 +49,8 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
                     <div className={commonClasses.focusIndicator}></div>
                     <div
                         className={c([
-                            commonClasses.selectionIndicator,
-                            classes.listFileEntrySelection,
+                            // commonClasses.selectionIndicator,
+                            // classes.listFileEntrySelection,
                         ])}
                     ></div>
                     <div className={classes.listFileEntryIcon}>
@@ -110,7 +110,7 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
 
 const useStyles = makeLocalChonkyStyles(theme => ({
     listFileEntry: {
-        boxShadow: `inset ${theme.palette.divider} 0 -1px 0`,
+        boxShadow: `inset rgba(154, 169, 191, 0.4) 0 -1px 0`,
         fontSize: theme.listFileEntry.fontSize,
         color: ({ dndState }: StyleState) =>
             dndState.dndIsOver
