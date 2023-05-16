@@ -49,8 +49,9 @@ export const CompactEntry: React.FC<FileEntryProps> = React.memo(
                                 Status ?? <span>—</span>
                             ) : (
                                 <>
-                                  <TextPlaceholder minLength={5} maxLength={15} />
-                                  {/* <TextValue value={} /> */}
+                                  {/* <TextPlaceholder minLength={5} maxLength={15} /> */}
+                                  <p>---</p>
+                                  
                                 </>
                               
                             )}
@@ -59,28 +60,40 @@ export const CompactEntry: React.FC<FileEntryProps> = React.memo(
                             {file ? (
                                 UsageReport ?? <span>—</span>
                             ) : (
-                                <TextPlaceholder minLength={10} maxLength={20} />
+                                <>
+                                 {/* <TextPlaceholder minLength={10} maxLength={20} /> */}
+                                 <p>---</p>
+                                </>
                             )}
                         </div>
                         <div className={classes.listFileEntryProperty}>
                             {file ? (
                                 DataModified ?? <span>-</span>
                             ) : (
-                                <TextPlaceholder minLength={10} maxLength={20} />
+                                <>
+                                {/* <TextPlaceholder minLength={10} maxLength={20} /> */}
+                                <p>---</p>
+                                </>
                             )}
                         </div>
                         <div className={classes.listFileEntryProperty}>
                             {file ? (
                                 complition ?? <span>-</span>
                             ) : (
-                                <TextPlaceholder minLength={10} maxLength={20} />
+                               <>
+                                {/* <TextPlaceholder minLength={10} maxLength={20} /> */}
+                                <p>---</p>
+                               </>
                             )}
                         </div>
                         <div className={classes.listFileEntryProperty}>
                             {file ? (
-                                Access ?? <span>-</span>
+                                Access ?? <span>-----</span>
                             ) : (
-                                <TextPlaceholder minLength={10} maxLength={20} />
+                               <>
+                                {/* <TextPlaceholder minLength={10} maxLength={20} /> */}
+                                <p>---</p>
+                               </>
                             )}
                         </div>
                     </div>
@@ -96,7 +109,7 @@ const useStyles = makeLocalChonkyStyles(theme => ({
     listFileEntry: {
         fontSize: theme.listFileEntry.fontSize,
         alignItems: 'center',
-        position: 'relative',
+     
         display: 'flex',
         height: '100%',
     },

@@ -106,7 +106,8 @@ export const ToolbarSearch: React.FC<ToolbarSearchProps> = React.memo(() => {
 const useStyles = makeGlobalChonkyStyles(theme => ({
     searchFieldContainer: {
         height: theme.toolbar.size,
-        width: 150,
+        width: 250,
+       
 
     },
     searchIcon: {
@@ -118,7 +119,8 @@ const useStyles = makeGlobalChonkyStyles(theme => ({
         padding: important(0),
         margin: important(0),
         fontSize: important(theme.toolbar.fontSize),
-        borderRadius: theme.toolbar.buttonRadius,
+        borderRadius: "10px",
+        borderColor : "#9AA9BF" ,
         height: theme.toolbar.size - 4,
         paddingLeft: important(8),
         marginTop: 2,

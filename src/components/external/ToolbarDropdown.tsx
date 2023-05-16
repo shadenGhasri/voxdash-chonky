@@ -12,6 +12,8 @@ import { useLocalizedFileActionGroup } from '../../util/i18n';
 import { important, makeGlobalChonkyStyles } from '../../util/styles';
 import { ToolbarButton } from './ToolbarButton';
 import { SmartToolbarDropdownButton } from './ToolbarDropdownButton';
+import { ToolbarSearch } from './ToolbarSearch';
+
 
 export type ToolbarDropdownProps = FileActionGroup;
 
@@ -54,6 +56,7 @@ export const ToolbarDropdown: React.FC<ToolbarDropdownProps> = React.memo(props 
             >
                 {menuItemComponents}
             </Menu>
+            
         </>
     );
 });

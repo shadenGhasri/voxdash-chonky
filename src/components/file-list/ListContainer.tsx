@@ -12,15 +12,20 @@ import { FileViewMode } from '../../types/file-view.types';
 import { useInstanceVariable } from '../../util/hooks-helpers';
 import { makeLocalChonkyStyles } from '../../util/styles';
 import { SmartFileEntry } from './FileEntry';
+import { useParamSelector } from '../../redux/store';
+
+
 
 export interface FileListListProps {
     width: any;
     height: any;
+
 }
 
 export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
     const { width, height } = props;
-
+   
+    const store = useSelector(state => state);
     const viewConfig = useSelector(selectFileViewConfig);
 
     const listRef = useRef<FixedSizeList>();
@@ -37,6 +42,7 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
         const rowRenderer = (data: { index: number; style: CSSProperties }) => {
             return (
                 <div style={data.style}>
+                    
                     <SmartFileEntry
                         fileId={displayFileIds[data.index] ?? null}
                         displayIndex={data.index}
@@ -48,38 +54,38 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
 
         
 
-        const TitleRenderer = (data: { index: number; style: CSSProperties }) => {
+        const TitleRenderer = () => {
 
            
 
 
             return (
                 <>
-                    {/* <div className={classes.titleDisplay}> */}
-                        {/* <div className={classes.titlecellNameDisplay}>Name</div> */}
-                        {/* <div className={classes.titlecellDisplay}>Status</div>
-                        <div className={classes.titlecellDisplay}>Data modified</div>
+                    <div className={classes.titleDisplay}>
+                        <div className={classes.titlecellNameDisplay}>Name</div> 
+                      <div className={classes.titlecellDisplay}>Status</div>
+                        <div className={classes.titlecellDisplay} onClick = {()=>{ prompt(`file `)}} >Data modified</div>
                         <div className={classes.titlecellDisplay}>% complition</div>
                         <div className={classes.titlecellDisplay}>Usage report</div>
                         <div className={classes.titlecellDisplay}>
                             Organizational Access
-                        </div> */}
-                    {/* </div> */}
+                        </div> 
+                    </div>
 
-                    <div style={data.style}>
+                    {/* <div style={data.style}>
                     <SmartFileEntry
                         fileId={displayFileIds[data.index] ?? null}
                         displayIndex={data.index}
                         fileViewMode={FileViewMode.List}
                     />
-                </div>
+                </div> */}
                 </>
             );
         };
 
         return (
             <>
-                <FixedSizeList
+                {/* <FixedSizeList
                     ref={listRef as any}
                     itemKey={getItemKey}
                     height={35}
@@ -90,19 +96,20 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
                    
                 >
                     {TitleRenderer}
-                </FixedSizeList>
+                </FixedSizeList> */}
 
-                {/* <div className={classes.titleDisplay}>
+                <div className={classes.titleDisplay} style={{width: `${width}px`}}>
                     <div className={classes.titlecellNameDisplay}>Name</div>
                     <div className={classes.titlecellDisplay}>Status</div>
-                    <div className={classes.titlecellDisplay}>Data modified</div>
+                    <div className={classes.titlecellDisplay}  onClick = {()=>{  prompt(width)}} >Data Modified</div>
                     <div className={classes.titlecellDisplay}>% complition</div>
-                    <div className={classes.titlecellDisplay}>Usage report</div>
+                    <div className={classes.titlecellDisplay}>Usage Report</div>
                     <div className={classes.titlecellDisplay}>
                         Organizational Access
                     </div>
                     <div className={classes.titlecellDisplay}>Public Access</div>
-                </div> */}
+                    <div className={classes.titlecellDisplayClick} >{" "}</div>
+                </div>
 
                 <FixedSizeList
                     ref={listRef as any}
@@ -136,8 +143,7 @@ const useStyles = makeLocalChonkyStyles(theme => ({
     titleDisplay: {
         display: 'flex',
         flexDirection: 'row',
-        // width: '100%',
-        // backgroundColor : "red"
+        // paddingLeft: "99px",
     },
     titlecellDisplay: {
         fontSize: theme.listFileEntry.propertyFontSize,
@@ -145,10 +151,12 @@ const useStyles = makeLocalChonkyStyles(theme => ({
         whiteSpace: 'nowrap',
         overflow: 'hidden',
         display: 'flex',
+        justifyContent: "center",
         flex: '0 1 150px',
         padding: [2, 8],
         zIndex: 20,
         color: '#9AA9BF',
+        cursor: "pointer" ,
     },
     titlecellNameDisplay: {
         textOverflow: 'ellipsis',
@@ -156,9 +164,23 @@ const useStyles = makeLocalChonkyStyles(theme => ({
         whiteSpace: 'nowrap',
         overflow: 'hidden',
         display: 'flex',
-        flex: '1 1 300px',
+        justifyContent: "start",
+        flex: '1 1 200px',
         paddingLeft: 8,
         zIndex: 20,
         color: '#9AA9BF',
+    },
+    titlecellDisplayClick: {
+        fontSize: theme.listFileEntry.propertyFontSize,
+        boxSizing: 'border-box',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        display: 'flex',
+        justifyContent: "end",
+        flex: '0 1 50px',
+        padding: [2, 8],
+        zIndex: 20,
+        color: '#9AA9BF',
+        cursor: "pointer" ,
     },
 }));

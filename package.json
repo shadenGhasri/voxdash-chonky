@@ -1,6 +1,6 @@
 {
   "name": "chonkyvoxdash",
-  "version": "2.7.9",
+  "version": "2.9.17",
   "description": "A File Browser component for React",
   "license": "MIT",
   "main": "dist/index.js",
@@ -81,6 +81,7 @@
     "@types/react-window": "^1.8.2",
     "@types/redux-watch": "^1.1.0",
     "@types/shortid": "^0.0.29",
+    "chonky": "^2.3.2",
     "classnames": "^2.2.6",
     "deepmerge": "^4.2.2",
     "exact-trie": "^1.0.13",

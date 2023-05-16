@@ -9,7 +9,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 import MenuItem from '@material-ui/core/MenuItem';
 import React, { useCallback, useContext } from 'react';
 import { Nullable } from 'tsdef';
-
 import { selectFileActionData } from '../../redux/selectors';
 import { useParamSelector } from '../../redux/store';
 import { ChonkyIconName } from '../../types/icons.types';
@@ -38,6 +37,7 @@ export const ToolbarDropdownButton = React.forwardRef(
             [classes.activeButton]: active,
         });
         return (
+         <>
             <MenuItem
                 ref={ref}
                 className={className}
@@ -53,6 +53,7 @@ export const ToolbarDropdownButton = React.forwardRef(
                     {text}
                 </ListItemText>
             </MenuItem>
+         </>
         );
     }
 );
@@ -73,6 +74,7 @@ const useStyles = makeGlobalChonkyStyles(theme => ({
     },
     text: {
         fontSize: important(theme.toolbar.fontSize),
+        color : "black"
     },
     activeButton: {
         color: important(theme.colors.textActive),

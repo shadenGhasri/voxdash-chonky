@@ -2922,10 +2922,52 @@ chokidar@^3.4.1, chokidar@^3.5.1, chokidar@^3.5.3:
   optionalDependencies:
     fsevents "~2.3.2"
 
+<<<<<<< HEAD
 chownr@^1.1.1:
   version "1.1.4"
   resolved "https://registry.npmjs.org/chownr/-/chownr-1.1.4.tgz"
   integrity sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg==
+=======
+"chonky@^2.3.2":
+  "integrity" "sha512-ed2u+SEjEPSn8bv/zC0sXfMG/XS6Ydm4J2leLCvRb7a/2BZxKqE1DFETxqfLeJ2OA1IRujvwnuvmJO8ZgyOGyA=="
+  "resolved" "https://registry.npmjs.org/chonky/-/chonky-2.3.2.tgz"
+  "version" "2.3.2"
+  dependencies:
+    "@material-ui/core" "4.11.3"
+    "@reduxjs/toolkit" "^1.5.0"
+    "@types/classnames" "^2.2.11"
+    "@types/fuzzy-search" "^2.1.0"
+    "@types/memoizee" "^0.4.5"
+    "@types/react" "^17.0.3"
+    "@types/react-redux" "^7.1.16"
+    "@types/react-virtualized-auto-sizer" "^1.0.0"
+    "@types/react-window" "^1.8.2"
+    "@types/redux-watch" "^1.1.0"
+    "@types/shortid" "^0.0.29"
+    "classnames" "^2.2.6"
+    "deepmerge" "^4.2.2"
+    "exact-trie" "^1.0.13"
+    "fast-sort" "^2.2.0"
+    "filesize" "^6.1.0"
+    "fuzzy-search" "^3.2.1"
+    "hotkeys-js" "^3.8.3"
+    "react-dnd" "11"
+    "react-dnd-html5-backend" "11"
+    "react-intl" "^5.13.2"
+    "react-jss" "^10.5.1"
+    "react-redux" "^7.2.2"
+    "react-virtualized-auto-sizer" "^1.0.5"
+    "react-window" "^1.8.6"
+    "redux-watch" "^1.2.0"
+    "shortid" "^2.2.16"
+    "styled-components" "^5.3.0"
+    "tsdef" "^0.0.14"
+
+"chownr@^1.1.1":
+  "integrity" "sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg=="
+  "resolved" "https://registry.npmjs.org/chownr/-/chownr-1.1.4.tgz"
+  "version" "1.1.4"
+>>>>>>> 5d58c711bd1f2ad84c5a5797c249f182976309ee
 
 chrome-trace-event@^1.0.2:
   version "1.0.3"
@@ -7716,10 +7758,17 @@ react-window@^1.8.6:
     "@babel/runtime" "^7.0.0"
     memoize-one ">=3.1.1 <6"
 
+<<<<<<< HEAD
 react@^17.0.1:
   version "17.0.2"
   resolved "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
+=======
+"react@*", "react@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^15.3.0 || ^16.0.0-alpha || ^17.0.0 || ^18.0.0-rc", "react@^16.3.0 || 17 || 18", "react@^16.8.0 || ^17.0.0", "react@^16.8.3 || ^17 || ^18", "react@^16.9.0 || ^17.0.0 || ^18", "react@^17.0.1", "react@>= 16.8.0", "react@>= 16.9.0", "react@>=16", "react@>=16.3", "react@>=16.6.0", "react@>=16.8.6", "react@17.0.2":
+  "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
+  "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
+  "version" "17.0.2"
+>>>>>>> 5d58c711bd1f2ad84c5a5797c249f182976309ee
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"

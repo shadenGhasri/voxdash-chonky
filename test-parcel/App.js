@@ -1763,8 +1763,8 @@ const Testi = () => {
             }
 
           >
-            <FileNavbar />
-            <FileToolbar />
+            <FileNavbar  />
+            <FileToolbar   />
             <FileList />
             <FileContextMenu />
           </FullFileBrowser>

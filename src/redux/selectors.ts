@@ -161,15 +161,23 @@ const getSortedFileIds = createSelector(
         return sortedFileIds;
     }
 );
+
 const getSearcher = createSelector(
     [makeGetFiles(getCleanFileIds)],
     cleanFiles => new FuzzySearch(cleanFiles as FileData[], ['name'], { caseSensitive: false })
 );
+
 const getSearchFilteredFileIds = createSelector(
     [getCleanFileIds, getSearchString, getSearcher],
     (cleanFileIds, searchString, searcher) =>
         searchString ? searcher.search(searchString).map(f => f.id) : cleanFileIds
 );
+
+
+
+
+
+
 const getHiddenFileIdMap = createSelector(
     [getSearchFilteredFileIds, makeGetFiles(getCleanFileIds), makeGetOptionValue(OptionIds.ShowHiddenFiles)],
     (searchFilteredFileIds, cleanFiles, showHiddenFiles) => {

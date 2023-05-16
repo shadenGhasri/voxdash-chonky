@@ -77,6 +77,8 @@ export const useLocalizedFileEntryStrings = (file: Nullable<FileData>) => {
             DataModified: formatters.formatFileModDate(intl, file),
             complition: formatters.formatFileSize(intl, file),
             Access: formatters.formatFileSize(intl, file),
+            Public : formatters.formatFileSize(intl, file),
+            ContextMenu : formatters.formatContextMenu(intl, file),
         };
     }, [file, formatters, intl]);
 };
@@ -121,6 +123,12 @@ export const defaultFormatters: ChonkyFormatters = {
             return `load`;
         }
         
+        
+    },
+    formatContextMenu : (_intl: IntlShape, file: Nullable<FileData>): Nullable<string> => {
+        // if (!file || typeof file.status !== 'number') return "number";
+         
+    return ":"    
         
     },
 

@@ -10,6 +10,11 @@ import { ToolbarSearch } from './ToolbarSearch';
 
 export interface FileToolbarProps {}
 
+
+
+
+
+
 export const FileToolbar: React.FC<FileToolbarProps> = React.memo(() => {
     const classes = useStyles();
     const toolbarItems = useSelector(selectToolbarItems);
@@ -22,13 +27,17 @@ export const FileToolbar: React.FC<FileToolbarProps> = React.memo(() => {
             const key = `toolbar-item-${typeof item === 'string' ? item : item.name}`;
             const component =
                 typeof item === 'string' ? (
+                    <>
                     <SmartToolbarButton key={key} fileActionId={item} />
+                    </>
                 ) : (
-                    <ToolbarDropdown
-                        key={key}
-                        name={item.name}
-                        fileActionIds={item.fileActionIds}
-                    />
+                    <>
+                        <ToolbarDropdown
+                            key={key}
+                            name={item.name}
+                            fileActionIds={item.fileActionIds}
+                        />
+                    </>
                 );
             components.push(component);
         }
@@ -36,15 +45,27 @@ export const FileToolbar: React.FC<FileToolbarProps> = React.memo(() => {
     }, [toolbarItems]);
 
     return (
+       <>
         <div className={classes.toolbarWrapper}>
-            <div className={classes.toolbarContainer}>
+            <div className={classes.toolbarContainer} >
                 <div className={classes.toolbarLeft}>
-                    {/* <ToolbarSearch /> */}
                     <ToolbarInfo />
                 </div>
-                <div className={classes.toolbarRight}>{toolbarItemComponents}</div>
+                <div className={classes.toolbarItem}  >New project</div>
+                <div className={classes.toolbarItem}>Bulk Project Upload</div>
+               
+
+
+                <div className={classes.toolbarRight}>{toolbarItemComponents} 
+              
+                
+                </div>
+                <ToolbarSearch />
+                
             </div>
         </div>
+         
+       </>
     );
 });
 
@@ -53,6 +74,9 @@ const useStyles = makeGlobalChonkyStyles(theme => ({
     toolbarContainer: {
         flexWrap: 'wrap-reverse',
         display: 'flex',
+        alignItems : "start",
+        
+       
     },
     toolbarLeft: {
         paddingBottom: theme.margins.rootLayoutMargin,
@@ -67,5 +91,18 @@ const useStyles = makeGlobalChonkyStyles(theme => ({
         paddingBottom: theme.margins.rootLayoutMargin,
         flexWrap: 'nowrap',
         display: 'flex',
+        paddingRight : "48px"
+       
+    },
+    toolbarItem: {
+        flexWrap: 'wrap-reverse',
+        display: 'flex',
+        alignItems : "start",
+        color : "#1A5DBC" ,
+        paddingRight : "48px",
+        paddingTop : "4px",
+
+
+       
     },
 }));

@@ -1,5 +1,5 @@
-import React, { useContext, useMemo } from 'react';
-
+import React, { useContext, useMemo  ,useState } from 'react';
+import {ContextMenuComponent} from "./ContextMenu"
 import { DndEntryState, FileEntryProps } from '../../types/file-list.types';
 import { useLocalizedFileEntryStrings } from '../../util/i18n';
 import { ChonkyIconContext } from '../../util/icon-helper';
@@ -22,6 +22,7 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
     ({ file, selected, focused, dndState }) => {
         const entryState: FileEntryState = useFileEntryState(file, selected, focused);
         const dndIconName = useDndIcon(dndState);
+        const [open, setOpen] = useState(false);
 
         const {
             Status,
@@ -29,6 +30,8 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
             DataModified,
             complition,
             Access,
+            Public,
+            ContextMenu,
         } = useLocalizedFileEntryStrings(file);
         const styleState = useMemo<StyleState>(
             () => ({
@@ -42,15 +45,13 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
         const ChonkyIcon = useContext(ChonkyIconContext);
         const fileEntryHtmlProps = useFileEntryHtmlProps(file);
         return (
-            <div className={classes.listFileDisplay} >
-
+            <div className={classes.listFileDisplay}>
                 <div className={classes.listFileEntry} {...fileEntryHtmlProps}>
-                
                     <div className={commonClasses.focusIndicator}></div>
                     <div
                         className={c([
-                            commonClasses.selectionIndicator,
-                            classes.listFileEntrySelection,
+                            // commonClasses.selectionIndicator,
+                            // classes.listFileEntrySelection,
                         ])}
                     ></div>
                     <div className={classes.listFileEntryIcon}>
@@ -102,6 +103,28 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
                             <TextPlaceholder minLength={10} maxLength={20} />
                         )}
                     </div>
+                    <div className={classes.listFileEntryProperty}>
+                        {file ? (
+                            Public ?? <span>-</span>
+                        ) : (
+                            <TextPlaceholder minLength={10} maxLength={20} />
+                        )}
+                    </div>
+                    <div
+                        className={classes.listFileEntryPropertyContextMenu}
+                        onClick={() => {
+                            setOpen(!open)
+                            // prompt(`${open}`)
+                        }}
+                    >
+                        {file ? (
+                            ContextMenu ?? <span>-</span>
+                        ) : (
+                            <TextPlaceholder minLength={10} maxLength={20} />
+                        )}
+                        
+                        <ContextMenuComponent display = {open} />
+                    </div>
                 </div>
             </div>
         );
@@ -110,7 +133,7 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
 
 const useStyles = makeLocalChonkyStyles(theme => ({
     listFileEntry: {
-        boxShadow: `inset ${theme.palette.divider} 0 -1px 0`,
+        boxShadow: `inset rgba(154, 169, 191, 0.4) 0 -1px 0`,
         fontSize: theme.listFileEntry.fontSize,
         color: ({ dndState }: StyleState) =>
             dndState.dndIsOver
@@ -119,7 +142,7 @@ const useStyles = makeLocalChonkyStyles(theme => ({
                     : theme.dnd.cannotDropColor
                 : 'inherit',
         alignItems: 'center',
-        position: 'relative',
+        // position: 'relative',
         display: 'flex',
         height: '100%',
     },
@@ -149,24 +172,37 @@ const useStyles = makeLocalChonkyStyles(theme => ({
     },
     listFileEntryProperty: {
         fontSize: theme.listFileEntry.propertyFontSize,
+        display: 'flex',
+        justifyContent: 'center',
         boxSizing: 'border-box',
         whiteSpace: 'nowrap',
         overflow: 'hidden',
         flex: '0 1 150px',
         padding: [2, 8],
+        // zIndex: 20,
+    },
+    listFileEntryPropertyContextMenu: {
+        fontSize: theme.listFileEntry.propertyFontSize,
+        display: 'flex',
+        justifyContent: 'center',
+        position : "relative",
+        boxSizing: 'border-box',
+        whiteSpace: 'nowrap',
+        // overflow: 'hidden',
+        flex: '0 1 50px',
+        padding: [2, 8],
         zIndex: 20,
-
+        cursor: "pointer" ,
     },
     listFileDisplay: {
-        display: "flex",
-        flexDirection: "column"
+        display: 'flex',
+        flexDirection: 'column',
+
 
     },
     titleDisplay: {
-        display: "flex",
-        flexDirection: "row",
-        width : "100%"
-
+        display: 'flex',
+        flexDirection: 'row',
+        width: '100%',
     },
-    
 }));
