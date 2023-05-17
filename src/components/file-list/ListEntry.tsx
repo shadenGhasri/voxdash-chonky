@@ -56,7 +56,7 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
                     ></div>
 
                     <input
-                    className={classes.listFileEntryCheckBox} 
+                        className={classes.listFileEntryCheckBox} 
                         type="checkbox"
                         id="checkbox"
                         name="checkbox"
@@ -70,13 +70,7 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
                             fixedWidth={true}
                         />
                     </div>
-                    <div className={classes.listFileEntryPropertyCheckBox}>
-                        {file ? (
-                            ContextMenu ?? <span>-</span>
-                        ) : (
-                            <TextPlaceholder minLength={10} maxLength={20} />
-                        )}
-                    </div>
+                
 
                     <div
                         className={classes.listFileEntryName}
