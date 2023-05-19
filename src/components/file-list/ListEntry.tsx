@@ -1,5 +1,5 @@
-import React, { useContext, useMemo  ,useState } from 'react';
-import {ContextMenuComponent} from "./ContextMenu"
+import React, { useContext, useMemo, useState } from 'react';
+import { ContextMenuComponent } from './ContextMenu';
 import { DndEntryState, FileEntryProps } from '../../types/file-list.types';
 import { useLocalizedFileEntryStrings } from '../../util/i18n';
 import { ChonkyIconContext } from '../../util/icon-helper';
@@ -50,17 +50,27 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
                     <div className={commonClasses.focusIndicator}></div>
                     <div
                         className={c([
-                            // commonClasses.selectionIndicator,
-                            // classes.listFileEntrySelection,
+                            commonClasses.selectionIndicator,
+                            classes.listFileEntrySelection,
                         ])}
                     ></div>
-                    <div className={classes.listFileEntryIcon}>
+
+                    <input
+                        className={classes.listFileEntryCheckBox} 
+                        type="checkbox"
+                        id="checkbox"
+                        name="checkbox"
+                        value="checkbox"
+                    />
+
+                    <div className={classes.listFileEntryIcon} >
                         <ChonkyIcon
                             icon={dndIconName ?? entryState.icon}
                             spin={dndIconName ? false : entryState.iconSpin}
                             fixedWidth={true}
                         />
                     </div>
+                
 
                     <div
                         className={classes.listFileEntryName}
@@ -113,7 +123,7 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
                     <div
                         className={classes.listFileEntryPropertyContextMenu}
                         onClick={() => {
-                            setOpen(!open)
+                            setOpen(!open);
                             // prompt(`${open}`)
                         }}
                     >
@@ -122,8 +132,8 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
                         ) : (
                             <TextPlaceholder minLength={10} maxLength={20} />
                         )}
-                        
-                        <ContextMenuComponent display = {open} />
+
+                        <ContextMenuComponent display={open} />
                     </div>
                 </div>
             </div>
@@ -161,6 +171,10 @@ const useStyles = makeLocalChonkyStyles(theme => ({
         padding: [2, 4],
         zIndex: 20,
     },
+    listFileEntryCheckBox:{
+        marginLeft: "10px",
+        marginRight: "10px",
+    },
     listFileEntryName: {
         textOverflow: 'ellipsis',
         boxSizing: 'border-box',
@@ -185,24 +199,35 @@ const useStyles = makeLocalChonkyStyles(theme => ({
         fontSize: theme.listFileEntry.propertyFontSize,
         display: 'flex',
         justifyContent: 'center',
-        position : "relative",
+        position: 'relative',
         boxSizing: 'border-box',
         whiteSpace: 'nowrap',
         // overflow: 'hidden',
         flex: '0 1 50px',
         padding: [2, 8],
         zIndex: 20,
-        cursor: "pointer" ,
+        cursor: 'pointer',
     },
     listFileDisplay: {
         display: 'flex',
         flexDirection: 'column',
-
-
     },
     titleDisplay: {
         display: 'flex',
         flexDirection: 'row',
         width: '100%',
+    },
+    listFileEntryPropertyCheckBox: {
+        fontSize: theme.listFileEntry.propertyFontSize,
+        display: 'flex',
+        justifyContent: 'center',
+        position: 'relative',
+        boxSizing: 'border-box',
+        whiteSpace: 'nowrap',
+        // overflow: 'hidden',
+        flex: '0 1 50px',
+        padding: [2, 8],
+        zIndex: 20,
+        cursor: 'pointer',
     },
 }));

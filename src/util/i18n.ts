@@ -77,11 +77,15 @@ export const useLocalizedFileEntryStrings = (file: Nullable<FileData>) => {
             DataModified: formatters.formatFileModDate(intl, file),
             complition: formatters.formatFileSize(intl, file),
             Access: formatters.formatFileSize(intl, file),
-            Public : formatters.formatFileSize(intl, file),
-            ContextMenu : formatters.formatContextMenu(intl, file),
+            Public: formatters.formatFileSize(intl, file),
+            ContextMenu: formatters.formatContextMenu(intl, file),
+         
         };
     }, [file, formatters, intl]);
 };
+
+
+
 
 export const defaultFormatters: ChonkyFormatters = {
     formatFileModDate: (
@@ -110,32 +114,28 @@ export const defaultFormatters: ChonkyFormatters = {
         }
         return `${sizeData.value} ${sizeData.symbol}`;
     },
-    formatFileStatus : (_intl: IntlShape, file: Nullable<FileData>): Nullable<string> => {
+    formatFileStatus: (
+        _intl: IntlShape,
+        file: Nullable<FileData>
+    ): Nullable<string> => {
         // if (!file || typeof file.status !== 'number') return "number";
 
         const status = file.status;
-        
+
         if (status === 1) {
-            return "successful"
+            return 'successful';
         } else if (status === 2) {
             return `unsuccessful`;
-        }else{
+        } else {
             return `load`;
         }
-        
-        
     },
-    formatContextMenu : (_intl: IntlShape, file: Nullable<FileData>): Nullable<string> => {
-        // if (!file || typeof file.status !== 'number') return "number";
-         
-    return ":"    
-        
+    formatContextMenu: (
+        _intl: IntlShape,
+        file: Nullable<FileData>
+    ): Nullable<string> => {
+        return ':';
     },
-
-
-
-
-
 
 
 };
