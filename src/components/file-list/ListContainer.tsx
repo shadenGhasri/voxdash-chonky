@@ -26,12 +26,19 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
     const { width, height } = props;
    
     const store = useSelector(state => state);
+    console.log("store",store);
     const viewConfig = useSelector(selectFileViewConfig);
 
     const listRef = useRef<FixedSizeList>();
 
     const displayFileIds = useSelector(selectors.getDisplayFileIds);
+    
+
+    
     const displayFileIdsRef = useInstanceVariable(displayFileIds);
+   
+
+
     const getItemKey = useCallback(
         (index: number) => displayFileIdsRef.current[index] ?? `loading-file-${index}`,
         [displayFileIdsRef]
@@ -40,6 +47,8 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
     const classes = useStyles();
     const listComponent = useMemo(() => {
         const rowRenderer = (data: { index: number; style: CSSProperties }) => {
+
+            console.log("displayFileIdsRef",displayFileIds[data.index]);
             return (
                 <div style={data.style}>
                     
@@ -54,54 +63,13 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
 
         
 
-        const TitleRenderer = () => {
-
-           
-
-
-            return (
-                <>
-                    <div className={classes.titleDisplay}>
-                        <div className={classes.titlecellNameDisplay}>Name</div> 
-                      <div className={classes.titlecellDisplay}>Status</div>
-                        <div className={classes.titlecellDisplay} onClick = {()=>{ prompt(`file `)}} >Data modified</div>
-                        <div className={classes.titlecellDisplay}>% complition</div>
-                        <div className={classes.titlecellDisplay}>Usage report</div>
-                        <div className={classes.titlecellDisplay}>
-                            Organizational Access
-                        </div> 
-                    </div>
-
-                    {/* <div style={data.style}>
-                    <SmartFileEntry
-                        fileId={displayFileIds[data.index] ?? null}
-                        displayIndex={data.index}
-                        fileViewMode={FileViewMode.List}
-                    />
-                </div> */}
-                </>
-            );
-        };
-
         return (
             <>
-                {/* <FixedSizeList
-                    ref={listRef as any}
-                    itemKey={getItemKey}
-                    height={35}
-                    itemCount={1}
-                    itemSize={100}
-                    layout="horizontal"
-                    width={1000}
-                   
-                >
-                    {TitleRenderer}
-                </FixedSizeList> */}
 
                 <div className={classes.titleDisplay} style={{width: `${width}px`}}>
                     <div className={classes.titlecellNameDisplay}>Name</div>
                     <div className={classes.titlecellDisplay}>Status</div>
-                    <div className={classes.titlecellDisplay}  onClick = {()=>{  prompt(width)}} >Data Modified</div>
+                    <div className={classes.titlecellDisplay}  >Data Modified</div>
                     <div className={classes.titlecellDisplay}>% complition</div>
                     <div className={classes.titlecellDisplay}>Usage Report</div>
                     <div className={classes.titlecellDisplay}>
@@ -119,6 +87,7 @@ export const ListContainer: React.FC<FileListListProps> = React.memo(props => {
                     itemCount={displayFileIds.length}
                     width={width}
                     itemKey={getItemKey}
+                    
                 >
                     {rowRenderer}
                 </FixedSizeList>

@@ -59,7 +59,6 @@ export const DefaultActions = {
                 // if (!hiddenFileIds.has(fileId)) newSelection.add(fileId);
                 if (!hiddenFileIds.has(fileId)) {
                     newSelection.add(fileId);
-                     // @ts-ignore
                      document
                      .querySelectorAll('input[type=checkbox]')
                      .forEach((el: Element) => {

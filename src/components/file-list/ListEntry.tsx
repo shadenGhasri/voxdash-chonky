@@ -24,6 +24,8 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
         const dndIconName = useDndIcon(dndState);
         const [open, setOpen] = useState(false);
 
+        console.log("selected",selected)
+
         const {
             Status,
             UsageReport,
@@ -47,7 +49,7 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
         return (
             <div className={classes.listFileDisplay}>
                 <div className={classes.listFileEntry} {...fileEntryHtmlProps}>
-                    <div className={commonClasses.focusIndicator}></div>
+                    {/* <div className={commonClasses.focusIndicator}></div> */}
                     <div
                         className={c([
                             commonClasses.selectionIndicator,
@@ -56,11 +58,16 @@ export const ListEntry: React.FC<FileEntryProps> = React.memo(
                     ></div>
 
                     <input
-                        className={classes.listFileEntryCheckBox} 
+                        // className={classes.listFileEntryCheckBox} 
+                        className={c([
+                            commonClasses.checkBoxStyle,
+                            classes.listFileEntryCheckBox,
+                        ])}
                         type="checkbox"
                         id="checkbox"
                         name="checkbox"
                         value="checkbox"
+                        checked={selected}
                     />
 
                     <div className={classes.listFileEntryIcon} >
