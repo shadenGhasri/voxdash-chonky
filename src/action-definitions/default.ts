@@ -1,4 +1,3 @@
-
 import { Nullable } from 'tsdef';
 
 import { selectFocusSearchInput } from '../redux/selectors';
@@ -57,7 +56,16 @@ export const DefaultActions = {
             fileIds.map(fileId => {
                 // We don't need to check if file is selectable because Chonky does
                 // it own checks internally.
-                if (!hiddenFileIds.has(fileId)) newSelection.add(fileId);
+                // if (!hiddenFileIds.has(fileId)) newSelection.add(fileId);
+                if (!hiddenFileIds.has(fileId)) {
+                    newSelection.add(fileId);
+                     // @ts-ignore
+                     document
+                     .querySelectorAll('input[type=checkbox]')
+                     .forEach((el: Element) => {
+                       (el as HTMLInputElement).checked = true;
+                     });
+                }
             });
             return newSelection;
         }) as FileSelectionTransform,
@@ -76,7 +84,15 @@ export const DefaultActions = {
             icon: ChonkyIconName.clearSelection,
         },
         selectionTransform: (({ prevSelection }) => {
-            if (prevSelection.size === 0) return null;
+            if (prevSelection.size === 0) {
+                return null;
+                
+            }
+            document
+                .querySelectorAll('input[type=checkbox]')
+                .forEach((el: Element) => {
+                  (el as HTMLInputElement).checked = false
+                });
             return new Set<string>();
         }) as FileSelectionTransform,
     } as const),
@@ -133,7 +149,8 @@ export const DefaultActions = {
      */
     SortFilesByName: defineFileAction({
         id: 'sort_files_by_name',
-        sortKeySelector: (file: Nullable<FileData>) => (file ? file.name.toLowerCase() : undefined),
+        sortKeySelector: (file: Nullable<FileData>) =>
+            file ? file.name.toLowerCase() : undefined,
         button: {
             name: 'Sort by name',
             toolbar: true,
@@ -157,7 +174,8 @@ export const DefaultActions = {
      */
     SortFilesByDate: defineFileAction({
         id: 'sort_files_by_date',
-        sortKeySelector: (file: Nullable<FileData>) => (file ? file.modDate : undefined),
+        sortKeySelector: (file: Nullable<FileData>) =>
+            file ? file.modDate : undefined,
         button: {
             name: 'Sort by date',
             toolbar: true,
@@ -225,12 +243,4 @@ export const DefaultActions = {
             iconOnly: true,
         },
     } as const),
-
-
-
-
-
-
 };
-
-

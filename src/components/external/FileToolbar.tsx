@@ -19,11 +19,14 @@ export const FileToolbar: React.FC<FileToolbarProps> = React.memo(() => {
     const classes = useStyles();
     const toolbarItems = useSelector(selectToolbarItems);
 
+    console.log("toolbarItems", toolbarItems)
+
     const toolbarItemComponents = useMemo(() => {
         const components: ReactElement[] = [];
         for (let i = 0; i < toolbarItems.length; ++i) {
             const item = toolbarItems[i];
-
+            console.log("item", item)
+            
             const key = `toolbar-item-${typeof item === 'string' ? item : item.name}`;
             const component =
                 typeof item === 'string' ? (

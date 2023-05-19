@@ -27,6 +27,7 @@ export const ToolbarInfo: React.FC<ToolbarInfoProps> = React.memo(() => {
     const hiddenCount = useSelector(selectHiddenFileCount);
 
     const intl = useIntl();
+    
     const fileCountString = intl.formatMessage(
         {
             id: getI18nId(I18nNamespace.Toolbar, 'visibleFileCount'),
@@ -59,6 +60,8 @@ export const ToolbarInfo: React.FC<ToolbarInfoProps> = React.memo(() => {
         { fileCount: hiddenCount }
     );
 
+
+    console.log("useIntl",intl , getI18nId)
     return (
         <div className={classes.infoContainer}>
             <Typography className={classes.infoText} variant="body1">
